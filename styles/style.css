@@ -18,7 +18,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
-
+a{
+    text-decoration: none;
+}
 
 body{
     font-family: var(--main-font);
