@@ -55,8 +55,8 @@ video{
     justify-content: center;
     border: 2px solid var(--main-blue) ;
     border-radius: 15px;
-    text-align: center;
     width: 250px;
+    font-size: var(--font-size);
 }
 
 
@@ -68,5 +68,16 @@ video{
     font-size: 12px;
 }
 
+
+#mensaje-resultado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid var(--main-blue) ;
+    border-radius: 15px;
+    width: 250px;
+    font-size: var(--font-size);
+    text-align: center;
+}
 
 
