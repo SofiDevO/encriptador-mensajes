@@ -22,7 +22,6 @@ body{
 }
 .container a{
     filter:drop-shadow(0 0 15px var(--main-color))
-
 }
 
 
@@ -48,11 +47,13 @@ video{
     gap: 50px;
 }
 
-.encriptador textarea{
+
+
+ textarea{
     resize: none;
     display: flex;
     justify-content: center;
-    border: 1px solid var(--main-blue) ;
+    border: 2px solid var(--main-blue) ;
     border-radius: 15px;
     text-align: center;
     width: 250px;
@@ -69,13 +70,3 @@ video{
 
 
 
-.mensaje-resultado textarea{
-    resize: none;
-    display: flex;
-    justify-content: center;
-    border: 1px solid var(--main-blue) ;
-    border-radius: 15px;
-    text-align: center;
-    width: 250px;
-
-}
