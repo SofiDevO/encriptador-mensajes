@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
-   
 }
+
 
 :root{
     --main-color: black;
@@ -9,7 +9,11 @@
     --font-size:1.1em;
     --main-font: 'Poppins', sans-serif;
     --main-blue: #0A4D68;
-    --gradient-blue: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 35%, rgba(0,212,255,1) 100%);
+    --seccond-blue: #088395;
+    --light-blue:#05BFDB;
+    --intense-blue:#00FFCA;
+
+    --gradient-blue: linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%);
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -68,12 +72,30 @@ video{
     font-size: 12px;
 }
 
+.btn-submit{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#encriptar-btn{
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: 3px solid var(--main-color);
+    background: var(--light-blue);
+}
+#encriptar-btn:hover{
+    background: var(--gradient-blue);
+    color: var(--intense-blue);
+    font-weight: bold;    
+}
 
 #mensaje-resultado{
     display: flex;
+    padding: 25px;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid var(--main-blue) ;
+    border: 3px solid var(--main-blue) ;
     border-radius: 15px;
     width: 250px;
     font-size: var(--font-size);
