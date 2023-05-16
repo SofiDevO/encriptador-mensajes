@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+:root{
+    --main-color: black;
+    --second-color: white;
+    --font-size:1.1em;
+    --main-font: 'Poppins', sans-serif;
+    --main-blue: #0A4D68
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+
+body{
+    font-family: var(--main-font);
+    width: 100%;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 35%, rgba(0,212,255,1) 100%); ;
+}
+
+img,
+video{
+    max-width: 100%;
+    height: auto;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#bloques-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+.encriptador textarea{
+    resize: none;
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--main-blue) ;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+}
