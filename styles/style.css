@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    
+   
 }
 
 :root{
@@ -20,7 +20,11 @@ body{
     font-family: var(--main-font);
     width: 100%;
 }
-    
+.container a{
+    filter:drop-shadow(0 0 15px var(--main-color))
+
+}
+
 
 img,
 video{
@@ -32,8 +36,10 @@ video{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
 }
+
+
 #bloques-texto{
     display: flex;
     flex-direction: column;
@@ -41,14 +47,6 @@ video{
     justify-content: center;
     gap: 50px;
 }
-
-
-
-
-
-
-
-
 
 .encriptador textarea{
     resize: none;
@@ -60,6 +58,7 @@ video{
     width: 250px;
 }
 
+
 .legend{
     padding-top: 15px;
     display: flex;
@@ -67,6 +66,8 @@ video{
     text-align: center;
     font-size: 12px;
 }
+
+
 
 .mensaje-resultado textarea{
     resize: none;
