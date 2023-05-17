@@ -13,7 +13,8 @@
     --light-blue:#05BFDB;
     --intense-blue:#00FFCA;
 
-    --gradient-blue: linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%);
+    --linear-gradient: linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%);
+    --radial-gradient: radial-gradient(circle, rgba(2,0,36,1) 18%, rgba(10,77,104,1) 61%, rgba(0,212,255,1) 100%);
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -99,7 +100,7 @@ button{
     cursor: pointer;    
 }
 button:hover{
-    background: var(--gradient-blue);
+    background: var(--linear-gradient);
     color: var(--intense-blue);
     font-weight: bold;    
 }
