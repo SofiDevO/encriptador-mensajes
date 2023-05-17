@@ -56,9 +56,15 @@ video{
     gap: 5px;
 }
 
+#bloques-texto h2{
+    padding: 0;
+    margin: 14px 0;
+    text-align: center;
+}
 
 
- textarea{
+
+textarea{
     resize: none;
     display: flex;
     padding: 9px;
@@ -91,6 +97,8 @@ video{
 }
 
 
+
+
 button{
     width: 183px;
     padding: 10px 40px;
@@ -105,6 +113,8 @@ button:hover{
     font-weight: bold;    
 }
 
+
+
 #mensaje-resultado{
     display: flex;
     padding: 11px;
@@ -115,11 +125,14 @@ button:hover{
     width: 250px;
     font-size: var(--font-size);
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 #mensaje-resultado legend{
     font-size: 10px;
+}
+.resultados{
+    padding: 25px;
 }
 
 #footer{
@@ -157,4 +170,69 @@ button:hover{
     display: flex;
     color: var(--second-color);
     margin: 6px 0;
+}
+
+
+@media(min-width:800px){
+
+    .header{
+        padding: 30px;
+    }
+    #bloques-texto{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        height: 80vh;
+        gap: 26px;
+        justify-items: center;
+    }
+
+
+    textarea{
+        padding: 9px;
+        border: 3px solid var(--main-blue);
+        border-radius: 15px;
+        width: 537px;
+        height: 320.23px;
+        font-size: 1.1em;
+        font-family: var(--main-font);
+        font-weight: 400;
+    }
+    .legend{
+        font-size: 15px;
+    }
+
+    .btns{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 25px 0;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .resultados{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .resultados img{
+        width:200px;
+    }
+
+    #mensaje-resultado{
+        padding: 51px;
+        width: 380px;
+        align-items: center;
+    }
+
+    #mensaje-resultado legend{
+        font-size: 15px;
+    }
+    #resultado{
+        font-size: 1.5em;
+    }
+
 }
