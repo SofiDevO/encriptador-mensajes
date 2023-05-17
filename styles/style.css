@@ -27,7 +27,6 @@ body{
     font-family: var(--main-font);
     width: 100%;
     margin: 0;
-
 }
 .container a{
     filter:drop-shadow(0 0 15px var(--main-color))
@@ -63,9 +62,13 @@ video{
 }
 
 
+.area-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 textarea{
-    resize: none;
     display: flex;
     padding: 9px;
     justify-content: center;
@@ -100,12 +103,12 @@ textarea{
 
 
 button{
-    width: 183px;
-    padding: 10px 40px;
+    width: 115px;
+    padding: 8px 5px;
     border-radius: 25px;
     border: 3px solid var(--main-color);
     background: var(--light-blue);
-    cursor: pointer;    
+    cursor: pointer;  
 }
 button:hover{
     background: var(--linear-gradient);
@@ -133,6 +136,10 @@ button:hover{
 }
 .resultados{
     padding: 25px;
+}
+
+.none{
+    display: none;
 }
 
 #footer{
@@ -172,17 +179,16 @@ button:hover{
     margin: 6px 0;
 }
 
-
-@media(min-width:800px){
-
+/* Vista de tablet */
+@media (min-width:710px){
     .header{
-        padding: 30px;
+        padding:15px  0;
     }
     #bloques-texto{
         display: grid;
         align-items: center;
-        grid-template-columns: 1fr 1fr;
-        height: 80vh;
+        grid-template-columns: 0fr 0fr;
+        height: 73vh;
         gap: 26px;
         justify-items: center;
     }
@@ -192,9 +198,109 @@ button:hover{
         padding: 9px;
         border: 3px solid var(--main-blue);
         border-radius: 15px;
-        width: 537px;
+        width: 279px;
+        height: 327.23px;
+        font-size: 14px;
+        font-family: var(--main-font);
+        font-weight: 400;
+    }
+    .legend{
+        font-size: 15px;
+    }
+
+    .btns{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 25px 0;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .resultados{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .resultados img{
+        width:200px;
+    }
+
+    #mensaje-resultado{
+        padding: 14px;
+        width: 269px;
+        align-items: center;
+    }
+
+    #mensaje-resultado legend{
+        font-size: 15px;
+    }
+    #resultado{
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    #footer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: var(--main-color);
+        height: auto;
+        padding: 0 35px;
+
+    }
+    
+
+    #footer .container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    
+    }
+    .logo-footer{
+        filter:drop-shadow(0 0 15px var(--intense-blue));
+        margin-top: 43px;
+    }
+    
+    #footer li{
+        color: var(--intense-blue);
+        gap: 25px;
+    }
+    
+    .nav a{
+        display: flex;
+        color: var(--second-color);
+        margin: 6px 0;
+    }
+    
+    
+    
+    
+}
+/* Vista pc */
+@media(min-width:1000px){
+
+    .header{
+        padding: 30px;
+    }
+    #bloques-texto{
+        display: flex;
+        flex-direction: row;
+        height: 72.5vh;
+        justify-items: center;
+    }
+
+
+    textarea{
+        padding: 9px;
+        border: 3px solid var(--main-blue);
+        border-radius: 15px;
+        width: 400px;
         height: 320.23px;
-        font-size: 1.1em;
+        font-size: 1em;
         font-family: var(--main-font);
         font-weight: 400;
     }
@@ -223,8 +329,9 @@ button:hover{
     }
 
     #mensaje-resultado{
-        padding: 51px;
-        width: 380px;
+        padding: 8px;
+        width: 459px;
+        height: 407px;
         align-items: center;
     }
 
@@ -232,7 +339,43 @@ button:hover{
         font-size: 15px;
     }
     #resultado{
-        font-size: 1.5em;
+        font-size: 1.1em;
+    }
+
+    #footer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: var(--main-color);
+        height: auto;
+        padding: 0 35px;
+
+    }
+    
+
+    #footer .container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    
+    }
+    .logo-footer{
+        filter:drop-shadow(0 0 15px var(--intense-blue));
+        margin-top: 43px;
+    }
+    .copy{
+        color: var(--second-color)
+    }
+    #footer li{
+        color: var(--intense-blue);
+        gap: 25px;
+    }
+    
+    .nav a{
+        display: flex;
+        color: var(--second-color);
+        margin: 6px 0;
     }
 
 }
