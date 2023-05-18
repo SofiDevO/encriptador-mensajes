@@ -22,14 +22,14 @@
             <div class="encriptador">
                 <h2>Ingrese el texto aqui</h2>
                 <div class="area-texto">
-                    <textarea name="encriptador" id="encriptador" cols="30" rows="10" ></textarea>
+                    <textarea name="encriptador" id="encriptador" cols="30" rows="10" required pattern="[^A-Z][0-9]"></textarea>
                     <div class="legend">
                         <img src="./img/bi_exclamation-circle-fill.svg" alt="">
                         <legend>Solo minúsculas sin acentos</legend>
                     </div>
                 </div>
                 <div class="btns">
-                    <button id="encriptar-btn">Encriptar</button>
+                    <button id="encriptador">Encriptar</button>
                     <button id="pegar">pegar</button>
                     <button id="limpiar">Limpiar</button>
                 </div>
@@ -83,9 +83,6 @@
             </div>
         </section>
     </footer>
-
-
-
-    
+    <script src="./js/modules.js" type="module"></script>    
 </body>
 </html>
