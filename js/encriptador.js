@@ -34,7 +34,7 @@ export default  btnEncriptar.addEventListener('click', ()=>{
     function recuperarTexto(){
         let area = d.querySelector(".area"); 
         return area.value;
-    }
+    }.
 
     
         
