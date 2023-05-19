@@ -1,1 +1,5 @@
-import{}from './modules.js'
+const d = document;
+
+
+import all from "./encriptador.js";
+

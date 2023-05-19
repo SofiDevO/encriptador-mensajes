@@ -353,6 +353,7 @@ button:hover{
     }
     #resultado{
         font-size: 1.1em;
+        color: var(--main-color)
     }
 
     #footer{

@@ -22,14 +22,15 @@
             <div class="encriptador">
                 <h2>Ingrese el texto aqui</h2>
                 <div class="area-texto">
-                    <textarea name="encriptador" id="encriptador" cols="30" rows="10" required pattern="[^A-Z][0-9]"></textarea>
+                    
+                    <textarea class="area" name="encriptador" id="encriptador" cols="30" rows="10" required></textarea>
                     <div class="legend">
                         <img src="./img/bi_exclamation-circle-fill.svg" alt="">
-                        <legend>Solo minúsculas sin acentos</legend>
+                        <legend >Solo minúsculas sin acentos</legend>
                     </div>
                 </div>
                 <div class="btns">
-                    <button id="encriptador">Encriptar</button>
+                    <button id="encriptar">Encriptar</button>
                     <button id="pegar">pegar</button>
                     <button id="limpiar">Limpiar</button>
                 </div>
@@ -40,16 +41,17 @@
             <!-- Seccion de resultado -->
             <div class="resultados">
                 <div id="mensaje-resultado">
-                    <img src="./img/Muñeco.svg" alt="muneco">
+                    <img id="muneco" src="./img/Muñeco.svg" alt="muneco">
                     <div class="loader none">
                         <img src="./img/rings.svg" alt="loader">
                     </div>
                     <p id="resultado">Ningún mensaje fue encontrado</p>
-                    <legend>Ingresa el texto que deseas encriptar</legend>
+                    <legend id="leyenda">Ingresa el texto que deseas encriptar</legend>
                 </div>
+                <!-- botones -->
                 <div class="btns">
-                    <button id="copiar-btn">Copiar</button>
-                    <button id="desencriptar-btn">Dsencriptar</button>
+                    <button id="copiar">Copiar</button>
+                    <button id="desencriptar">Dsencriptar</button>
                 </div>
 
             </div>
