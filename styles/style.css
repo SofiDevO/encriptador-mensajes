@@ -388,6 +388,7 @@ button:hover{
         display: flex;
         color: var(--second-color);
         margin: 6px 0;
+        cursor: pointer;
     }
 
 }
