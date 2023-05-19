@@ -72,13 +72,12 @@ textarea{
     display: flex;
     padding: 9px;
     justify-content: center;
-    border: 2px solid var(--main-blue) ;
+    border: 2px solid var(--main-blue);
     border-radius: 15px;
     width: 250px;
     height: 180px;
-    font-size: var(--font-size);
+    font-size: 13px;
     font-family: var(--main-font);
-    font-weight: 600;
 }
 
 
@@ -213,9 +212,8 @@ button:hover{
         border-radius: 15px;
         width: 279px;
         height: 327.23px;
-        font-size: 14px;
+        font-size: 13px;
         font-family: var(--main-font);
-        font-weight: 400;
     }
     .legend{
         font-size: 15px;
@@ -313,10 +311,10 @@ button:hover{
         border-radius: 15px;
         width: 400px;
         height: 320.23px;
-        font-size: 1em;
+        font-size: 17px;
         font-family: var(--main-font);
-        font-weight: 400;
     }
+        
     .legend{
         font-size: 15px;
     }
