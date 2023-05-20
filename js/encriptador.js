@@ -175,6 +175,7 @@ areaTexto.addEventListener('input', () => {
     const palabrasCortas = palabras.filter(palabra => palabra.length <= 23);
     areaTexto.value = palabrasCortas.join(' ');
     alert("¡¡Buen intento!! 🤡  No puedes ingresar más de 23 carácteres seguidos, usa espacios")
+    location.reload();
     }
 });    
     

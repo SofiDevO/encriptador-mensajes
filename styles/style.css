@@ -158,8 +158,8 @@ button:hover{
     font-weight: 500;
     height: 284px;
     font-weight: bold;
-    overflow: scroll;
-}
+/*     overflow: scroll;
+ */}
 
 #mensaje-resultado legend{
     font-size: 10px;
