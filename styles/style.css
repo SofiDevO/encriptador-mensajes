@@ -136,8 +136,14 @@ button:hover{
     width: 190px;
 }
 
+
 #muneco{
     width:200px;
+    filter:drop-shadow(0 0 12px var(--main-color));
+}
+#forbriden{
+    width:200px;
+    filter:drop-shadow(0 0 12px var(--main-color));
 }
 
 
@@ -221,7 +227,7 @@ button:hover{
         display: grid;
         align-items: center;
         grid-template-columns: 0fr 0fr;
-        height: 73vh;
+        height: 88vh;
         gap: 26px;
         justify-items: center;
     }
@@ -261,9 +267,11 @@ button:hover{
 
     #muneco{
         width:204px;
+        filter:drop-shadow(0 0 12px var(--main-color));
     }
     #forbriden{
         width:200px;
+        filter:drop-shadow(0 0 12px var(--main-color));
     }
 
     #mensaje-resultado{
