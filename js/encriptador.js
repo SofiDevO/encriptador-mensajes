@@ -104,12 +104,12 @@ areaTexto.addEventListener('click', ()=>{
 /* Evento al escribir en el área de texto */
 areaTexto.addEventListener('input', () => {
     let texto = recuperarTexto();
-    
+
     texto = texto.replace(/[^\w\s]/gi, '');
     areaTexto.value = texto;
     if (texto.length > 16) {
       const palabras = texto.split(' ');
-      const palabrasCortas = palabras.filter(palabra => palabra.length <= 17);
+      const palabrasCortas = palabras.filter(palabra => palabra.length <= 23);
       areaTexto.value = palabrasCortas.join(' ');
     }
 });    
