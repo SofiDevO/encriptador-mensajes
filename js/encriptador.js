@@ -17,54 +17,117 @@ const btnEncriptar = d.getElementById('encriptar') ;
 
 
 ImagenForbriden.style.display = 'none'; 
-/* funcion btnEncriptar, boton */
+btnPegar.style.display = 'none';
+btnCopiar.style.display = 'none';
+btnDesencriptar.style.display = 'none';
+
+/* Función para encriptar un mensaje */
+function encriptarMensaje(mensaje) {
+    let mensajeEncriptado = "";
+
+    for (let i = 0; i < mensaje.length; i++) {
+    let letra = mensaje[i];
+
+    if (letra === "e") {
+        mensajeEncriptado += "enter";
+    } else if (letra === "i") {
+        mensajeEncriptado += "imes";
+    } else if (letra === "a") {
+        mensajeEncriptado += "ai";
+    } else if (letra === "o") {
+        mensajeEncriptado += "ober";
+    } else if (letra === "u") {
+        mensajeEncriptado += "ufat";
+    } else {
+        mensajeEncriptado += letra;
+    }
+    }
+
+    return mensajeEncriptado;
+}
+
+
+/* Función para desencriptar un mensaje */
+function desencriptarMensaje(mensajeEncriptado) {
+    let mensajeDesencriptado = "";
+
+    for (let i = 0; i < mensajeEncriptado.length; i++) {
+    let fragmento = mensajeEncriptado.substr(i, 5);
+
+    if (fragmento === "enter") {
+        mensajeDesencriptado += "e";
+        i += 4;
+    } else if (fragmento === "imes") {
+        mensajeDesencriptado += "i";
+        i += 4;
+    } else if (fragmento === "ober") {
+        mensajeDesencriptado += "o";
+        i += 3;
+    } else if (fragmento === "ufat") {
+        mensajeDesencriptado += "u";
+        i += 3;
+    } else {
+        let fragmentoDosLetras = mensajeEncriptado.substr(i, 2);
+
+        if (fragmentoDosLetras === "ai") {
+    mensajeDesencriptado += "a";
+        i += 1;
+        } else {
+    mensajeDesencriptado += mensajeEncriptado[i];
+        }
+    }
+    }
+    return mensajeDesencriptado;
+}
+    
+    
+    
+
+/* Evento al hacer clic en el botón de encriptar */
+
 export default  btnEncriptar.addEventListener('click', ()=>{
     let area = recuperarTexto();
-    let encriptartexto = encriptar();
+    let encriptado = encriptarMensaje(area);
     
-    
-    
-
-
-    function encriptar(){
-        if (recuperarTexto() === ''){
+        if (area === ''){
             mensajeResultado.textContent = ErrorAlert();
             ImagenForbriden.style.display = 'block'; 
             Leyenda.style.display = 'none'; 
             ImagenMuneco.style.display = 'none';
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
- 
         }else{
-            
             ImagenForbriden.style.display = 'none'; 
             ImagenMuneco.style.display = 'none'; 
-
-            
-            mensajeResultado.textContent = recuperarTexto();
+            btnPegar.style.display = 'block';
+            btnCopiar.style.display = 'block';
+            btnDesencriptar.style.display = 'block';
+            mensajeResultado.textContent = encriptado;
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
         }
-    }
-   
-
-            
-
-
-    
-    
-    
-    
-    
 });
+
+/* Evento al hacer click en el botón desencriptar */
+btnDesencriptar.addEventListener('click', ()=>{
+    let areaDesencriptar= areaTexto.value;
+    let desencriptado  = desencriptarMensaje(areaDesencriptar);
+    mensajeResultado.textContent = desencriptado;
+});
+
 
 /* Función para recuperar el texto del área de texto */
 function recuperarTexto(){
     let area = d.querySelector(".area");
     ImagenMuneco.style.display = 'none' 
-   
+    
     return area.value.toLowerCase();
 }
+
+/* function recuperarTextoDesencriptado(){
+    let areaEncriptado = d.querySelector(".resulttado");
+    return areaEncriptado.value
+} */
 
 
 
@@ -108,13 +171,13 @@ areaTexto.addEventListener('input', () => {
     texto = texto.replace(/[^\w\s]/gi, '');
     areaTexto.value = texto;
     if (texto.length > 16) {
-      const palabras = texto.split(' ');
-      const palabrasCortas = palabras.filter(palabra => palabra.length <= 23);
-      areaTexto.value = palabrasCortas.join(' ');
+    const palabras = texto.split(' ');
+    const palabrasCortas = palabras.filter(palabra => palabra.length <= 23);
+    areaTexto.value = palabrasCortas.join(' ');
+    alert("¡¡Buen intento!! 🤡  No puedes ingresar más de 23 carácteres seguidos, usa espacios")
     }
 });    
     
-
 
 
 
