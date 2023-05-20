@@ -53,13 +53,10 @@ video{
     align-items: center;
     justify-content: center;
     gap: 5px;
+    padding: 40px 0;
 }
 
-#bloques-texto h2{
-    padding: 0;
-    margin: 14px 0;
-    text-align: center;
-}
+
 
 
 .area-texto{
@@ -78,6 +75,12 @@ textarea{
     height: 180px;
     font-size: 13px;
     font-family: var(--main-font);
+    font-weight:bold;
+}
+
+textarea::placeholder{
+    text-align: center;
+    font-size: 1.5em;
 }
 
 
@@ -128,7 +131,14 @@ button:hover{
     font-weight: bold;    
 }
 
+.loader img{
+    width: 200px;
+}
 
+#muneco, #forbriden{
+    width: 200px;
+    filter:drop-shadow(0 0 12px var(--main-color));
+}
 
 #mensaje-resultado{
     display: flex;
@@ -141,6 +151,8 @@ button:hover{
     font-size: var(--font-size);
     text-align: center;
     font-weight: 500;
+    height: 284px;
+    font-weight: bold;
 }
 
 #mensaje-resultado legend{
@@ -231,6 +243,9 @@ button:hover{
         gap: 7px;
     }
 
+    .loader img{
+        width: 259px;
+    }
     .resultados{
         display: flex;
         flex-direction: column;
@@ -238,14 +253,13 @@ button:hover{
         
     }
 
-    .resultados img{
-        width:200px;
-    }
+    
 
     #mensaje-resultado{
         padding: 12px;
-        width: 269px;
+        width: 372px;
         align-items: center;
+        height: 356px;
     }
 
     #mensaje-resultado legend{
@@ -337,14 +351,14 @@ button:hover{
         
     }
 
-    .resultados img{
-        width:200px;
+    #muneco, #forbriden{
+        width: 280px;
     }
 
     #mensaje-resultado{
         padding: 8px;
-        width: 459px;
-        height: 407px;
+        width: 430px;
+        height: 330px;
         align-items: center;
     }
 
@@ -352,7 +366,7 @@ button:hover{
         font-size: 15px;
     }
     #resultado{
-        font-size: 1.1em;
+        font-size: 17px;
         color: var(--main-color)
     }
 
