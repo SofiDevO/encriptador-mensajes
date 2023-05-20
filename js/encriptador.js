@@ -180,12 +180,6 @@ areaTexto.addEventListener('input', () => {
 });    
     
 
-
-
-
-
-
-
 /* Evento al hacer clic en el botón de limpiar */
 
 btnLimpiar.addEventListener('click', ()=>{
