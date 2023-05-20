@@ -135,11 +135,6 @@ button:hover{
     width: 200px;
 }
 
-#muneco, #forbriden{
-    width: 200px;
-    filter:drop-shadow(0 0 12px var(--main-color));
-}
-
 #mensaje-resultado{
     display: flex;
     padding: 11px;
@@ -253,7 +248,9 @@ button:hover{
         
     }
 
-    
+    .munecos, .forbriden{
+        width:200px;
+    }
 
     #mensaje-resultado{
         padding: 12px;
@@ -352,7 +349,8 @@ button:hover{
     }
 
     #muneco, #forbriden{
-        width: 280px;
+        width: 300px;
+        filter:drop-shadow(0 0 12px black)
     }
 
     #mensaje-resultado{
@@ -366,8 +364,10 @@ button:hover{
         font-size: 15px;
     }
     #resultado{
-        font-size: 17px;
-        color: var(--main-color)
+        font-size: 1.1em;
+        color: var(--main-color);
+        
+        
     }
 
     #footer{

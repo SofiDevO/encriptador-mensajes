@@ -1,7 +1,7 @@
 const d = document;
 
-const mensajeResultado = document.getElementById('resultado');
-const areaTexto = (document.getElementById("encriptador"));
+const mensajeResultado = d.getElementById('resultado');
+const areaTexto = (d.getElementById("encriptador"));
 const ImagenMuneco = d.getElementById('muneco');
 const ImagenForbriden = d.getElementById('forbriden');
 const Leyenda = d.getElementById('leyenda');
@@ -79,8 +79,8 @@ areaTexto.addEventListener('click', ()=>{
     loader.classList.remove("none");
     mensajeResultado.textContent = capturandoTexto();
 
-
 })
+
 
 
 /* Boton para limpiar TransformStreamDefaultController(Solo es un reset) */
