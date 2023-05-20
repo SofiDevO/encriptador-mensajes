@@ -168,7 +168,7 @@ areaTexto.addEventListener('click', ()=>{
 areaTexto.addEventListener('input', () => {
     let texto = recuperarTexto();
 
-    texto = texto.replace(/[^\w\s]/gi, '');
+    texto = texto.replace(/[^a-z \s\n]/gi, '');
     areaTexto.value = texto;
     if (texto.length > 16) {
     const palabras = texto.split(' ');
