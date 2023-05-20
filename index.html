@@ -50,8 +50,8 @@
             <div class="encriptador">
                 <!-- <h2>Ingrese el texto aqui</h2> -->
                 <div class="area-texto">                    
-                    <textarea  class="area"  id="encriptador" cols="30" rows="10" placeholder="Ingrese el texto aqui" ></textarea>
-                    <div class="legend" >
+                    <textarea name="palabras"  class="area"  id="encriptador" cols="30" rows="10" placeholder="Ingrese el texto aqui" ></textarea>
+                    <div class="legend" pattern = "^[a-z]{16}$" >
                         <img src="./img/bi_exclamation-circle-fill.svg" alt="">
                         <legend >Solo minúsculas sin acentos</legend>
                     </div>
@@ -59,7 +59,7 @@
                 <div class="btns">
                     <button id="encriptar">Encriptar</button>
                     <button id="pegar">pegar</button>
-                    <button id="limpiar">Limpiar</button>
+                    <button id="limpiar">Limpiar ↺</button>
                 </div>
             </div>
 
