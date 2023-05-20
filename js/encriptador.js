@@ -168,15 +168,15 @@ areaTexto.addEventListener('click', ()=>{
 areaTexto.addEventListener('input', () => {
     let texto = recuperarTexto();
 
-    texto = texto.replace(/[^a-z \s\n]/gi, '');
+    texto = texto.replace(/[^a-z0-9,.ñ \n]/gi, '');
     areaTexto.value = texto;
-    if (texto.length > 16) {
+    if (texto.length > 23) {
     const palabras = texto.split(' ');
     const palabrasCortas = palabras.filter(palabra => palabra.length <= 23);
     areaTexto.value = palabrasCortas.join(' ');
-    alert("¡¡Buen intento!! 🤡  No puedes ingresar más de 23 carácteres seguidos, usa espacios")
-    location.reload();
+   /* alert("¡¡Buen intento!! 🤡  No puedes ingresar más de 23 carácteres seguidos, usa espacios"); */
     }
+
 });    
     
 
