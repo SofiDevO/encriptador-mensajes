@@ -1,7 +1,7 @@
 const d = document;
 
-const mensajeResultado = d.getElementById('resultado');
-const areaTexto = (d.getElementById("encriptador"));
+const mensajeResultado = d.getElementById('resultado')
+const areaTexto = d.getElementById("encriptador")
 const ImagenMuneco = d.getElementById('muneco');
 const ImagenForbriden = d.getElementById('forbriden');
 const Leyenda = d.getElementById('leyenda');
