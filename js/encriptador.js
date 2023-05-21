@@ -16,6 +16,7 @@ const btnCopiar = d.getElementById('copiar');
 
 
 /* Ocultar elemntos y botones */
+btnLimpiar.style.display = 'none'
 ImagenForbriden.style.display = 'none'; 
 btnPegar.style.display = 'none';
 btnCopiar.style.display = 'none';
@@ -91,12 +92,14 @@ export default  btnEncriptar.addEventListener('click', ()=>{
         }else{
             ImagenForbriden.style.display = 'none'; 
             ImagenMuneco.style.display = 'none'; 
+            btnCopiar.style.display = 'block';
             btnPegar.style.display = 'block';
-            btnCopiar.style.display = 'none';
+            btnLimpiar.style.display = 'block'
             btnDesencriptar.style.display = 'block';
             mensajeResultado.textContent = encriptado;
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
+            btnEncriptar.style.display = 'none';
         }
 
 });
@@ -106,9 +109,7 @@ btnDesencriptar.addEventListener('click', ()=>{
     let areaDesencriptar= areaTexto.value;
     let desencriptado  = desencriptarMensaje(areaDesencriptar);
     mensajeResultado.textContent = desencriptado;
-    btnCopiar.style.display = 'block';
-
-    btnDesencriptar.style.display = 'none';
+    
 
 });
 
@@ -150,7 +151,8 @@ areaTexto.addEventListener('click', ()=>{
 })
 
 
-/* Evento al escribir en el área de texto */
+/* Evento al escribir en el área de texto, limita los caracteres y largo de las palabras mediante  expresiones regulares y el elemnto .replace */
+
 areaTexto.addEventListener('input', () => {
     let texto = recuperarTexto();
     texto = texto.replace(/[^a-z0-9,.ñ \n]/gi, '');
@@ -176,16 +178,18 @@ btnLimpiar.addEventListener('click', ()=>{
 
 btnCopiar.addEventListener('click', ()=>{
     let copy = copiarTexto()
-    let autoPaste = pegarTextorCopiado()
-   
+/*     let autoPaste = pegarTextorCopiado()
+ */   
     function copiarTexto(){
         let textoCopiar = mensajeResultado.textContent;
         navigator.clipboard.writeText(textoCopiar).then(()=>{
         console.log("texto copiado " + textoCopiar)
-        areaTexto.textContent = autoPaste;
+        btnCopiar.style.display = 'none';
+
+        /* areaTexto.textContent = autoPaste;
         btnPegar.style.display = 'none';
         areaTexto.style.color = "red"
-        btnCopiar.style.display = 'none';
+        btnCopiar.style.display = 'none'; */
     })
 
 
@@ -193,21 +197,22 @@ btnCopiar.addEventListener('click', ()=>{
     }
     
 });
- 
+ /* Evento para  el boton pegar */
 btnPegar.addEventListener('click', ()=>{
     let paste = pegarTextorCopiado()
     areaTexto.textContent =paste;
     areaTexto.style.color = "blue"
+    btnPegar.style.display = 'none';
 
 
 })
 
     
-
+/* funcion para recuperar el texto copiado  */
 function pegarTextorCopiado(){
     navigator.clipboard.readText()
     .then(textoPegado => {
-      areaTexto.value = textoPegado;
+    areaTexto.value = textoPegado;
 }
 )} 
 

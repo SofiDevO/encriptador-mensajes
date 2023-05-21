@@ -19,17 +19,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
-a{
-    text-decoration: none;
-}
+
 
 body{
     font-family: var(--main-font);
     width: 100%;
     margin: 0;
-}
-.container a{
-    filter:drop-shadow(0 0 15px var(--main-color))
+    
 }
 
 
@@ -39,12 +35,8 @@ video{
     height: auto;
 }
 
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
+
+
 
 
 #bloques-texto{
@@ -193,9 +185,17 @@ button:hover{
 
 }
 .logo-footer{
-    filter:drop-shadow(0 0 15px var(--intense-blue));
+    filter:drop-shadow(0 0 15px );
     margin-top: 43px;
 }
+.logo-footer:hover{
+    filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%);
+}
+    
+    
+    
+
+
 .copy{
     color: var(--second-color)
 }
