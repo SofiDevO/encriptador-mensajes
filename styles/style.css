@@ -8,7 +8,7 @@
     --second-color: white;
     --font-size:1.1em;
     --main-font: 'Poppins', sans-serif;
-    --main-blue: #0A4D68;
+    --main-blue: #012650;
     --seccond-blue: #088395;
     --light-blue:#05BFDB;
     --intense-blue:#00FFCA;
@@ -188,7 +188,8 @@ button:hover{
 
 }
 .logo-footer{
-    filter:drop-shadow(0 0 15px );
+    filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(0 0 15px );
+    
     margin-top: 43px;
 }
 .logo-footer:hover{
@@ -299,12 +300,19 @@ button:hover{
     #footer .container{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
     
     }
+
     .logo-footer{
-        filter:drop-shadow(0 0 15px var(--intense-blue));
-        margin-top: 43px;
+        filter: invert(100%) sepia(12%) saturate(166%) hue-rotate(219deg) brightness(115%) contrast(90%);
+        
+        
+    }
+    .copy{
+    padding: 0 45px 0;        
+
     }
     
     #footer li{
@@ -410,8 +418,8 @@ button:hover{
     
     }
     .logo-footer{
-        filter:drop-shadow(0 0 15px var(--intense-blue));
-        margin-top: 43px;
+        padding: 0 25px;
+    margin-top: 43px;
     }
     .copy{
         color: var(--second-color)

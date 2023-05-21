@@ -6,16 +6,18 @@
     
 .logo{
     padding: 15px;
+    
 }
+
+
+
+
 .logo:hover{
     filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%);
 
 }
 
 
-.container a{
-    filter:drop-shadow(0  0 12px var(--main-color))
-}
 
 a{
     text-decoration: none;
@@ -28,9 +30,9 @@ i{
     padding: 10px;
     font-size: 30px;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
     top: 1%;
-    left: 80%;
+    left: 78%;
 }
 
     
@@ -68,6 +70,7 @@ i:hover{
         left: 87%;
         background-color: transparent;
         border: none;
+        filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%)
     }
 
     i:hover{
