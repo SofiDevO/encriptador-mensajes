@@ -28,7 +28,7 @@ a{
 }
 
 i{
-    border: 3px solid var(--main-color);
+   
     border-radius: 100%;
     padding: 10px;
     font-size: 30px;
@@ -55,8 +55,8 @@ i:hover{
 
 
 
-/* Vista de tablet */
-@media (min-width:710px){
+/* Vista de  desktop */
+@media (min-width:1000px){
     .header{
         padding:15px  0;
     }
