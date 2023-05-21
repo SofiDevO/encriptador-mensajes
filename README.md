@@ -1,7 +1,7 @@
 # encriptador-mensajes 💙
 
  ## SPANISH 🇲🇽 :
-Este es mi Primer proyecto para el desafío de lógixa de programación de Alura latam y One Oracle. 💻
+Este es mi Primer proyecto para el desafío de lógica de programación de Alura latam y One Oracle. 💻
 
 El encriptador tiene un modo minimalista y un modo Neon, el cual cuantea con varios effectos generados con JS y CSS3. 😎
 
@@ -15,7 +15,6 @@ This is my first project for the Alura Latam and One Oracle programming logic ch
 The encryptor has a minimalist mode and a Neon mode, which features several effects generated with JS and CSS3. 😎
 
 I look forward to your feedback and suggestions.
-
 
 
 
