@@ -34,7 +34,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de mensajes</title>
+    <link rel="stylesheet" href="/styles/neonTheme.css">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
 </head>
     
 <body>
@@ -42,6 +44,8 @@
     <header class="header">
         <div class="container">
             <a href="./index.html"><img src="./img/Vector.png" alt="Alura logo" class="logo"></a>
+            <i class="bi bi-lightning-charge-fill" id="toggleNeon"></i>
+            <img src="./img/" alt="">
         </div>
     </header>
     <!-- Seccion  de encriptador -->
@@ -57,9 +61,9 @@
                     </div>
                 </div>
                 <div class="btns">
-                    <button id="encriptar">Encriptar</button>
-                    <button id="pegar">pegar</button>
-                    <button id="limpiar">Reset ↺</button>
+                    <button class="btn" id="encriptar">Encriptar</button>
+                    <button class="btn" id="pegar">pegar</button>
+                    <button class="btn" id="limpiar">Reset ↺</button>
                 </div>
             </div>
 
@@ -80,8 +84,8 @@
                 </div>
                 <!-- botones -->
                 <div class="btns">
-                    <button id="copiar">Copiar</button>
-                    <button id="desencriptar">Desencriptar</button>
+                    <button class="btn" id="copiar">Copiar</button>
+                    <button class="btn" id="desencriptar">Desencriptar</button>
                 </div>
 
             </div>
