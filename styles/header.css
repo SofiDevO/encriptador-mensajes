@@ -68,7 +68,7 @@ i:hover{
         padding: 10px;
         font-size: 45px;
         cursor: pointer;
-        position: fixed;
+        position: absolute;
         top: 2%;
         left: 87%;
         background-color: transparent;
