@@ -44,10 +44,14 @@
     <!-- cabecera -->
     <header class="header">
         <div class="container">
-            <a href="./index.html"><img src="./img/Vector.png" alt="Alura logo" class="logo"></a>
-            <i class="bi bi-lightning-charge-fill"></i>
+        <a href="./index.html">
+            <img src="./img/Vector.png" alt="Alura logo" class="logo">
+        </a>
+
+<!--             <i class="bi bi-lightning-charge-fill" ></i> -->
+            <i class="bi bi-lightbulb" id="toggleDark"></i>
             
-            <!-- <img src="./img/lightning-charge-fill.svg" alt=""> -->
+            
         </div>
     </header>
     <!-- Seccion  de encriptador -->
@@ -64,8 +68,8 @@
                 </div>
                 <div class="btns">
                     <button class="btn" id="encriptar">Encriptar</button>
-                    <button class="btn" id="pegar">pegar</button>
-                    <button class="btn" id="limpiar">Reset ↺</button>
+                    <button class="btn" id="pegar">Pegar</button>
+                    <button class="btn" id="limpiar">Limpiar ↺</button>
                 </div>
             </div>
 
@@ -73,7 +77,7 @@
 
             <!-- Seccion de resultado -->
             <div class="resultados">
-                <div id="mensaje-resultado">
+                <div class="mensaje-resultado" id="mensaje-resultado">
                     <img id="muneco" src="./img/anime01.png" alt="muneco">
                     <img id="forbriden" src="./img/anime02.png" alt="">    
                     
@@ -121,6 +125,6 @@
             </div>
         </section>
     </footer>
-    <script src="./js/modules.js" type="module" defer></script>    
+    <script src="./js/modules.js" type="module" ></script>    
 </body>
 </html>

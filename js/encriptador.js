@@ -168,12 +168,14 @@ areaTexto.addEventListener('input', () => {
 
 /* Evento al hacer clic en el botón de limpiar */
 btnLimpiar.addEventListener('click', ()=>{
-    reinicio = limpiar();
-    function limpiar(){
-        location.reload();
-    }
+    let borrar = limpiar();    
 })
+    
+/* funcion para limpiar  el texto */
 
+function limpiar(){
+    d.getElementById ('encriptador').value = "";
+}
 /* Evento al hacer click sosbre el botón copiar */
 
 btnCopiar.addEventListener('click', ()=>{
@@ -185,6 +187,7 @@ btnCopiar.addEventListener('click', ()=>{
         navigator.clipboard.writeText(textoCopiar).then(()=>{
         console.log("texto copiado " + textoCopiar)
         btnCopiar.style.display = 'none';
+        btnEncriptar.style.display = 'block';
 
         /* areaTexto.textContent = autoPaste;
         btnPegar.style.display = 'none';

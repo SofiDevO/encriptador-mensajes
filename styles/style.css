@@ -26,6 +26,7 @@ body{
     width: 100%;
     margin: 0;
     
+    
 }
 
 
@@ -68,6 +69,8 @@ textarea{
     font-size: 13px;
     font-family: var(--main-font);
     font-weight:bold;
+    resize: none;
+    
 }
 
 textarea::placeholder{
