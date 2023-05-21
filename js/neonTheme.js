@@ -22,14 +22,23 @@ export  function cambiarModo(){
     if(this.classList.toggle('bi-lightbulb')){
         body.style.background = 'white';
         body.style.color = 'black';
-        
-        logo.style.filter = 'none';
-        logoFooter.style.filter = 'none';
-        
-
-        cajaResultado.style.boxShadow = 'none';
-
         body.style.transition = '2s';
+        
+        logo.style.filter = 'invert(16%) sepia(45%) saturate(2765%) hue-rotate(196deg) brightness(94%) contrast(97%)';
+        logoFooter.style.filter = 'invert(100%) sepia(0%) saturate(0%) hue-rotate(6deg) brightness(101%) contrast(104%)';
+        areaTexto.style.backgroundColor = 'white'
+        areaTexto.style.color = 'black';
+        areaTexto.style.border = 'solid 4px #012650';
+        areaTexto.style.boxShadow = '0 0 0px ';
+        mensajeResultado.style.color = 'black'
+
+
+        cajaResultado.style.boxShadow = '0 0 0px ';
+        cajaResultado.style.border = 'solid 4px #012650';
+
+      
+
+
     }else{
         body.style.background = 'black';
         body.style.color = 'white';

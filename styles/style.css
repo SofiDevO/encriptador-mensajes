@@ -12,6 +12,7 @@
     --seccond-blue: #088395;
     --light-blue:#05BFDB;
     --intense-blue:#00FFCA;
+    --color-logo: #0A3871
 
     --linear-gradient: linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%);
     --radial-gradient: radial-gradient(circle, rgba(2,0,36,1) 18%, rgba(10,77,104,1) 61%, rgba(0,212,255,1) 100%);
@@ -188,7 +189,7 @@ button:hover{
 
 }
 .logo-footer{
-    filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(0 0 15px );
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(6deg) brightness(101%) contrast(104%) drop-shadow(0 0 15px );
     
     margin-top: 43px;
 }

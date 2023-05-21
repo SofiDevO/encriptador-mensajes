@@ -6,6 +6,9 @@
     
 .logo{
     padding: 15px;
+    filter: invert(16%) sepia(45%) saturate(2765%) hue-rotate(196deg) brightness(94%) contrast(97%);
+
+
     
 }
 
