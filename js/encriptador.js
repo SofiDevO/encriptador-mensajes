@@ -13,6 +13,7 @@ const btnDesencriptar = d.getElementById('desencriptar');
 const btnPegar = d.getElementById('pegar');
 const btnLimpiar = d.getElementById('limpiar');
 const btnReset = d.getElementById('reset');
+const btnEnviar = d.getElementById('enviar')
 
 
 /* Ocultar elemntos y botones */
@@ -78,8 +79,35 @@ function desencriptarMensaje(mensajeEncriptado) {
 /* Evento al hacer clic en el botón de encriptar */
 
 export default  btnEncriptar.addEventListener('click', ()=>{
-    let area = recuperarTexto();
+    let area = areaTexto.value ;
     let encriptado = encriptarMensaje(area);
+    let textoArea = recuperarTexto()
+
+        if (textoArea === ''){
+            mensajeResultado.textContent = ErrorAlert();
+            ImagenForbriden.style.display = 'block'; 
+            leyenda.style.display = 'none'; 
+            ImagenMuneco.style.display = 'none';
+            const loader = d.querySelector(".loader");
+            loader.classList.add("none");
+        }else{
+            ImagenForbriden.style.display = 'none'; 
+            ImagenMuneco.style.display = 'none'; 
+            btnReset.style.display = 'block';
+            btnPegar.style.display = 'block';
+            btnLimpiar.style.display = 'block'
+            btnDesencriptar.style.display = 'block';
+            mensajeResultado.textContent = encriptado;
+            const loader = d.querySelector(".loader");
+            loader.classList.add("none");
+            leyenda.style.display = 'block'; 
+            leyenda.textContent = textoCopiado();
+        }
+});
+
+/* Evento al hacer click en el boton enviar */
+btnEnviar.addEventListener('click', ()=>{
+    let area = recuperarTexto();
     
         if (area === ''){
             mensajeResultado.textContent = ErrorAlert();
@@ -95,7 +123,7 @@ export default  btnEncriptar.addEventListener('click', ()=>{
             btnPegar.style.display = 'block';
             btnLimpiar.style.display = 'block'
             btnDesencriptar.style.display = 'block';
-            mensajeResultado.textContent = encriptado;
+            mensajeResultado.textContent = area;
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
             leyenda.style.display = 'block'; 
