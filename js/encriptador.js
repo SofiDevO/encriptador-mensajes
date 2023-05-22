@@ -21,6 +21,9 @@ btnLimpiar.style.display = 'none'
 ImagenForbriden.style.display = 'none'; 
 btnPegar.style.display = 'none';
 btnReset.style.display = 'none';
+/* btnEncriptar.style.display = 'none';
+btnDesencriptar.style.display = 'none'; */
+
 
 /* Función para encriptar un mensaje */
 function encriptarMensaje(mensaje) {
@@ -45,70 +48,43 @@ function encriptarMensaje(mensaje) {
         return mensajeEncriptado;
     }
 
-
 /* Función para desencriptar un mensaje */
-function desencriptarMensaje(mensajeEncriptado) {
+function desencriptarMensaje(mensaje) {
     let mensajeDesencriptado = "";
-    for (let i = 0; i < mensajeEncriptado.length; i++) {
-    let fragmento = mensajeEncriptado.substr(i, 5);
-        if (fragmento === "enter") {
-            mensajeDesencriptado += "e";
-            i += 4;
-        } else if (fragmento === "imes") {
-            mensajeDesencriptado += "i";
-            i += 4;
-        } else if (fragmento === "ober") {
-            mensajeDesencriptado += "o";
-            i += 3;
-        } else if (fragmento === "ufat") {
-            mensajeDesencriptado += "u";
-            i += 3;
+    let palabras = mensaje.split(" ");
+    for (let i = 0; i < palabras.length; i++) {
+        let palabra = palabras[i];
+        let palabraDesencriptada = "";
+        for (let j = 0; j < palabra.length; j++) {
+        let letra = palabra[j];
+        if (letra === "enter") {
+            palabraDesencriptada += "e";
+        } else if (letra === "imes") {
+            palabraDesencriptada += "i";
+        } else if (letra === "ai") {
+            palabraDesencriptada += "a";
+        } else if (letra === "ober") {
+            palabraDesencriptada += "o";
+        } else if (letra === "ufat") {
+            palabraDesencriptada += "u";
         } else {
-            let fragmentoDosLetras = mensajeEncriptado.substr(i, 2);
-        if (fragmentoDosLetras === "ai") {
-            mensajeDesencriptado += "a";
-            i += 1;
-        } else {
-            mensajeDesencriptado += mensajeEncriptado[i];
+            palabraDesencriptada += letra;
         }
         }
+        mensajeDesencriptado += palabraDesencriptada + " ";
     }
-    return mensajeDesencriptado;
-}
+    return mensajeDesencriptado.trim();
+    }
+
+
 
 /* Evento al hacer clic en el botón de encriptar */
 
 export default  btnEncriptar.addEventListener('click', ()=>{
-    let area = areaTexto.value ;
+    let area = recuperarTexto() ;
     let encriptado = encriptarMensaje(area);
-    let textoArea = recuperarTexto()
 
-        if (textoArea === ''){
-            mensajeResultado.textContent = ErrorAlert();
-            ImagenForbriden.style.display = 'block'; 
-            leyenda.style.display = 'none'; 
-            ImagenMuneco.style.display = 'none';
-            const loader = d.querySelector(".loader");
-            loader.classList.add("none");
-        }else{
-            ImagenForbriden.style.display = 'none'; 
-            ImagenMuneco.style.display = 'none'; 
-            btnReset.style.display = 'block';
-            btnPegar.style.display = 'block';
-            btnLimpiar.style.display = 'block'
-            btnDesencriptar.style.display = 'block';
-            mensajeResultado.textContent = encriptado;
-            const loader = d.querySelector(".loader");
-            loader.classList.add("none");
-            leyenda.style.display = 'block'; 
-            leyenda.textContent = textoCopiado();
-        }
-});
 
-/* Evento al hacer click en el boton enviar */
-btnEnviar.addEventListener('click', ()=>{
-    let area = recuperarTexto();
-    
         if (area === ''){
             mensajeResultado.textContent = ErrorAlert();
             ImagenForbriden.style.display = 'block'; 
@@ -122,14 +98,71 @@ btnEnviar.addEventListener('click', ()=>{
             btnReset.style.display = 'block';
             btnPegar.style.display = 'block';
             btnLimpiar.style.display = 'block'
-            btnDesencriptar.style.display = 'block';
-            mensajeResultado.textContent = area;
+            mensajeResultado.textContent = encriptado;
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
             leyenda.style.display = 'block'; 
             leyenda.textContent = textoCopiado();
+            btnReset.style.display = 'block';
+            limpiar();
+
+
+
         }
 });
+
+
+
+/* Evento al hacer click en el botón desencriptar */
+btnDesencriptar.addEventListener('click', ()=>{
+    let areaDesencriptar = recuperarTexto()
+    let desencriptado  = desencriptarMensaje(areaDesencriptar);
+
+
+    mensajeResultado.textContent = desencriptado;
+    btnReset.style.display = 'block';
+    const loader = d.querySelector(".loader");
+    loader.classList.add("none");
+    console.log("Si funciono")
+    
+    
+    
+    
+    
+    
+
+});
+
+
+/* Evento al hacer click en el boton enviar */
+/* btnEnviar.addEventListener('click', ()=>{
+    let area = recuperarTexto();
+    
+        if (area === ''){
+            mensajeResultado.textContent = ErrorAlert();
+            ImagenForbriden.style.display = 'block'; 
+            leyenda.style.display = 'none'; 
+            ImagenMuneco.style.display = 'none';
+            const loader = d.querySelector(".loader");
+            loader.classList.add("none");
+        }else{
+            mensajeResultado.textContent = area;
+            ImagenForbriden.style.display = 'none'; 
+            ImagenMuneco.style.display = 'none'; 
+            btnPegar.style.display = 'block';
+            btnLimpiar.style.display = 'block'
+            btnDesencriptar.style.display = 'block';
+            btnEncriptar.style.display = 'block';
+            const loader = d.querySelector(".loader");
+            loader.classList.add("none");
+            leyenda.style.display = 'block'; 
+            leyenda.textContent = textoCopiado();
+            btnReset.style.display = 'block';
+                        btnEncriptar.style.display = 'block';
+
+
+        }
+}); */
 
 
 
@@ -137,14 +170,10 @@ btnEnviar.addEventListener('click', ()=>{
 
 
 
-/* Evento al hacer click en el botón desencriptar */
-btnDesencriptar.addEventListener('click', ()=>{
-    let areaDesencriptar= areaTexto.value;
-    let desencriptado  = desencriptarMensaje(areaDesencriptar);
-    mensajeResultado.textContent = desencriptado;
+
+
     
 
-});
 
 
 /* Función para recuperar el texto del área de texto */
@@ -154,6 +183,7 @@ function recuperarTexto(){
     
     return area.value.toLowerCase();
 }
+
 
 
 /* Función para mostrar un mensaje de error */
@@ -192,9 +222,16 @@ mensajeResultado.addEventListener('click', ()=>{
         let textoCopiar = mensajeResultado.textContent;
         navigator.clipboard.writeText(textoCopiar).then(()=>{
         console.log("texto copiado " + textoCopiar)
-        btnEncriptar.style.display = 'block';
-        btnPegar.style.display = 'none';
+        btnPegar.style.display = 'block';
+        
     })
+
+       
+        
+
+        
+
+
     }
 });
 
@@ -226,9 +263,17 @@ btnLimpiar.addEventListener('click', ()=>{
     let borrar = limpiar();    
 })
 
+
+
 /* funcion para limpiar  el texto */
 function limpiar(){
     d.getElementById ('encriptador').value = "";
+}
+
+
+
+function limpiarResultado(){
+    mensajeResultado.textContent = "";
 }
 
 /* Evento para el boton reset */
