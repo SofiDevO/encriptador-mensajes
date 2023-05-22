@@ -134,35 +134,7 @@ btnDesencriptar.addEventListener('click', ()=>{
 });
 
 
-/* Evento al hacer click en el boton enviar */
-/* btnEnviar.addEventListener('click', ()=>{
-    let area = recuperarTexto();
-    
-        if (area === ''){
-            mensajeResultado.textContent = ErrorAlert();
-            ImagenForbriden.style.display = 'block'; 
-            leyenda.style.display = 'none'; 
-            ImagenMuneco.style.display = 'none';
-            const loader = d.querySelector(".loader");
-            loader.classList.add("none");
-        }else{
-            mensajeResultado.textContent = area;
-            ImagenForbriden.style.display = 'none'; 
-            ImagenMuneco.style.display = 'none'; 
-            btnPegar.style.display = 'block';
-            btnLimpiar.style.display = 'block'
-            btnDesencriptar.style.display = 'block';
-            btnEncriptar.style.display = 'block';
-            const loader = d.querySelector(".loader");
-            loader.classList.add("none");
-            leyenda.style.display = 'block'; 
-            leyenda.textContent = textoCopiado();
-            btnReset.style.display = 'block';
-                        btnEncriptar.style.display = 'block';
 
-
-        }
-}); */
 
 
 
