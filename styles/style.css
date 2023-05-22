@@ -12,10 +12,10 @@
     --seccond-blue: #088395;
     --light-blue:#05BFDB;
     --intense-blue:#00FFCA;
-    --color-logo: #0A3871
-
+    --color-logo: #0A3871;
     --linear-gradient: linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%);
     --radial-gradient: radial-gradient(circle, rgba(2,0,36,1) 18%, rgba(10,77,104,1) 61%, rgba(0,212,255,1) 100%);
+
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -166,6 +166,15 @@ button:hover{
 #resultado {
     font-size: 13px;
 }
+#resultado:hover{
+    color: var(--seccond-blue);
+}
+
+#resultado:active{
+    font-size: 45px;
+    color: var(--intense-blue);
+}
+
 .none{
     display: none;
 }
@@ -241,7 +250,7 @@ button:hover{
         font-family: var(--main-font);
     }
     .legend{
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .btns{
@@ -279,7 +288,7 @@ button:hover{
         height: 356px;
     }
 
-    #mensaje-resultado legend{
+    #mensaje-resultado .legend{
         font-size: 11px;
     }
     #resultado{
@@ -355,9 +364,7 @@ button:hover{
         font-family: var(--main-font);
     }
         
-    .legend{
-        font-size: 15px;
-    }
+ 
 
     .btns{
         display: flex;
@@ -388,17 +395,17 @@ button:hover{
         align-items: center;
     }
 
-    #mensaje-resultado legend{
-        font-size: 15px;
+    #mensaje-resultado .legend{
+        font-size: 10px;
     }
     #resultado{
         font-size: 1.1em;
         color: var(--main-color);
         padding: 0;
     margin: 0;
+    }   
         
         
-    }
 
     #footer{
         width: 100%;

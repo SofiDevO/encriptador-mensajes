@@ -5,22 +5,21 @@ const mensajeResultado = d.getElementById('resultado')
 const areaTexto = d.getElementById("encriptador")
 const ImagenMuneco = d.getElementById('muneco');
 const ImagenForbriden = d.getElementById('forbriden');
-const Leyenda = d.getElementById('leyenda');
+const leyenda = d.getElementById('leyenda');
 
 /* Botones */
 const btnEncriptar = d.getElementById('encriptar') ;
 const btnDesencriptar = d.getElementById('desencriptar');
 const btnPegar = d.getElementById('pegar');
 const btnLimpiar = d.getElementById('limpiar');
-const btnCopiar = d.getElementById('copiar');
+const btnReset = d.getElementById('reset');
 
 
 /* Ocultar elemntos y botones */
 btnLimpiar.style.display = 'none'
 ImagenForbriden.style.display = 'none'; 
 btnPegar.style.display = 'none';
-btnCopiar.style.display = 'none';
-btnDesencriptar.style.display = 'none';
+btnReset.style.display = 'none';
 
 /* Función para encriptar un mensaje */
 function encriptarMensaje(mensaje) {
@@ -85,21 +84,24 @@ export default  btnEncriptar.addEventListener('click', ()=>{
         if (area === ''){
             mensajeResultado.textContent = ErrorAlert();
             ImagenForbriden.style.display = 'block'; 
-            Leyenda.style.display = 'none'; 
+            leyenda.style.display = 'none'; 
             ImagenMuneco.style.display = 'none';
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
         }else{
             ImagenForbriden.style.display = 'none'; 
             ImagenMuneco.style.display = 'none'; 
-            btnCopiar.style.display = 'block';
+            btnReset.style.display = 'block';
             btnPegar.style.display = 'block';
             btnLimpiar.style.display = 'block'
             btnDesencriptar.style.display = 'block';
             mensajeResultado.textContent = encriptado;
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
-            btnEncriptar.style.display = 'none';
+            leyenda.style.display = 'block'; 
+            leyenda.textContent = textoCopiado();
+            
+
         }
 
 });
@@ -144,11 +146,33 @@ areaTexto.addEventListener('click', ()=>{
     btnPegar.style.display = 'block';
     ImagenMuneco.style.display = 'none' 
     ImagenForbriden.style.display = 'none' 
-    Leyenda.style.display = 'none'; 
+    leyenda.style.display = 'none'; 
     const loader = d.querySelector(".loader");
     loader.classList.remove("none");
     mensajeResultado.textContent = capturandoTexto();
 })
+
+
+/* Evento copiar al al hacer click en el Resultado */
+mensajeResultado.addEventListener('click', ()=>{
+    let copy = copiarTexto()
+  
+    function copiarTexto(){
+        let textoCopiar = mensajeResultado.textContent;
+        navigator.clipboard.writeText(textoCopiar).then(()=>{
+        console.log("texto copiado " + textoCopiar)
+        btnEncriptar.style.display = 'block';
+        btnPegar.style.display = 'none';
+    })
+    }
+});
+
+
+
+function textoCopiado(){
+    let copiarLeyenda = d.querySelector('.leyenda');
+    return("Da click en el resultado para copiar ❏")
+}        
 
 
 /* Evento al escribir en el área de texto, limita los caracteres y largo de las palabras mediante  expresiones regulares y el elemnto .replace */
@@ -170,36 +194,26 @@ areaTexto.addEventListener('input', () => {
 btnLimpiar.addEventListener('click', ()=>{
     let borrar = limpiar();    
 })
-    
-/* funcion para limpiar  el texto */
 
+/* funcion para limpiar  el texto */
 function limpiar(){
     d.getElementById ('encriptador').value = "";
 }
-/* Evento al hacer click sosbre el botón copiar */
 
-btnCopiar.addEventListener('click', ()=>{
-    let copy = copiarTexto()
-/*     let autoPaste = pegarTextorCopiado()
- */   
-    function copiarTexto(){
-        let textoCopiar = mensajeResultado.textContent;
-        navigator.clipboard.writeText(textoCopiar).then(()=>{
-        console.log("texto copiado " + textoCopiar)
-        btnCopiar.style.display = 'none';
-        btnEncriptar.style.display = 'block';
+/* Evento para el boton reset */
+btnReset.addEventListener('click', ()=>{
+    let refresh = recargar()
 
-        /* areaTexto.textContent = autoPaste;
-        btnPegar.style.display = 'none';
-        areaTexto.style.color = "red"
-        btnCopiar.style.display = 'none'; */
-    })
-
-
-
+    function recargar(){
+        location.reload();
     }
+})    
+
+
+
+
+
     
-});
  /* Evento para  el boton pegar */
 btnPegar.addEventListener('click', ()=>{
     let paste = pegarTextorCopiado()

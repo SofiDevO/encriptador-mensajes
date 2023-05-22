@@ -35,8 +35,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de mensajes</title>
     <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
     
 </head>
     
@@ -63,13 +63,13 @@
                     <textarea name="palabras"  class="area"  id="encriptador" cols="30" rows="10" placeholder="Ingrese el texto aqui" ></textarea>
                     <div class="legend">
                         <img src="./img/bi_exclamation-circle-fill.svg" alt="">
-                        <legend >Solo minúsculas sin acentos</legend>
+                        <p >Solo minúsculas sin acentos</p>
                     </div>
                 </div>
                 <div class="btns">
                     <button class="btn" id="encriptar">Encriptar</button>
                     <button class="btn" id="pegar">Pegar</button>
-                    <button class="btn" id="limpiar">Limpiar ↺</button>
+                    <button class="btn" id="limpiar">Limpiar </button>
                 </div>
             </div>
 
@@ -86,11 +86,11 @@
                         <img src="./img/rings.svg" alt="loader">
                     </div>
                     <p id="resultado" class="resultado">Empieza por escribir algo</p>
-                    <legend id="leyenda">A la Izquierda, ingresa el texto que deseas encriptar</legend>
+                    <p class="legend" id="leyenda">Ingresa el texto que deseas encriptar</p>
                 </div>
                 <!-- botones -->
                 <div class="btns">
-                    <button class="btn" id="copiar">Copiar</button>
+                    <button class="btn" id="reset">Reset↺</button>
                     <button class="btn" id="desencriptar">Desencriptar</button>
                 </div>
 

@@ -10,7 +10,8 @@ const mensajeResultado = d.getElementById('resultado')
 const botonEncriptar= d.getElementById('encriptar')
 const botonPegar= d.getElementById('pegar')
 const botonLimpiar= d.getElementById( 'limpiar' )
-const botonCopiar= d.getElementById('copiar')
+/* const botonCopiar= d.getElementById('copiar') */
+const btnReset= d.getElementById('reset')
 const botonDesencriptar= d.getElementById('desencriptar')
 const areaTexto = d.getElementById("encriptador")
 
@@ -69,23 +70,27 @@ export  function cambiarModo(){
 
         botonEncriptar.style.color = 'rgba(0,212,255,1)'
         botonEncriptar.style.boxShadow = '0 0 10px  white'
-        botonEncriptar.style.transition = '2s';
+        botonEncriptar.style.transition = '.5s';
 
 
         botonPegar.style.color = 'rgba(0,212,255,1)'
         botonPegar.style.boxShadow = '0 0 10px  white'
-        botonPegar.style.transition = '2s';
+        botonPegar.style.transition = '.5s';
 
 
 
         botonLimpiar.style.color = 'rgba(0,212,255,1)'
         botonLimpiar.style.boxShadow = '0 0 10px  white'
-        botonLimpiar.style.transition = '2s';
+        botonLimpiar.style.transition = '.5s';
 
 
-        botonCopiar.style.color = 'rgba(0,212,255,1)';
+        /* botonCopiar.style.color = 'rgba(0,212,255,1)';
         botonCopiar.style.boxShadow = '0 0 10px  white';
-        botonCopiar.style.transition = '2s';
+        botonCopiar.style.transition = '2s'; */
+        
+        btnReset.style.color = 'rgba(0,212,255,1)';
+        btnReset.style.boxShadow = '0 0 10px  white';
+        btnReset.style.transition = '2s';
 
         botonDesencriptar.style.color = 'rgba(0,212,255,1)';
         botonDesencriptar.style.boxShadow = '0 0 10px  white';
@@ -95,7 +100,7 @@ export  function cambiarModo(){
         botonEncriptar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
         botonPegar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
         botonLimpiar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
-        botonCopiar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
+        btnReset.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
         botonDesencriptar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
     }
         
