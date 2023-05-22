@@ -100,14 +100,14 @@ export default  btnEncriptar.addEventListener('click', ()=>{
             loader.classList.add("none");
             leyenda.style.display = 'block'; 
             leyenda.textContent = textoCopiado();
+        }
+});
 
 
 
               
 
-        }
 
-});
 
 /* Evento al hacer click en el botón desencriptar */
 btnDesencriptar.addEventListener('click', ()=>{
