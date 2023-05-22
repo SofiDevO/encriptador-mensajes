@@ -52,7 +52,31 @@ i:hover{
 
 
 
+@media (min-width:768px){
+    .header{
+        padding:15px  0;
+    }
 
+    i{
+        filter: drop-shadow(5px -4px 18px rgb(7, 193, 250));
+        border: 3px solid var(--main-color);
+        border-radius: 100%;
+        padding: 10px;
+        font-size: 45px;
+        cursor: pointer;
+        position: absolute;
+        top: 2%;
+        left: 87%;
+        background-color: transparent;
+        border: none;
+        filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%)
+    }
+
+    i:hover{
+        filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(2px -5px 8px rgb(7, 193, 250));
+        
+    }
+}
 
 
 /* Vista de  desktop */
