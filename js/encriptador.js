@@ -99,6 +99,8 @@ export default  btnEncriptar.addEventListener('click', ()=>{
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
             leyenda.style.display = 'block'; 
+            leyenda.textContent = textoCopiado();
+
 
 
               
