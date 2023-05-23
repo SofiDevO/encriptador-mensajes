@@ -16,7 +16,7 @@
 
 
 .logo:hover{
-    filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%);
+    filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(5px -4px 18px rgb(7, 193, 250));;
 
 }
 
@@ -94,5 +94,10 @@ i:hover{
     i:hover{
         filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(2px -5px 8px rgb(7, 193, 250));
         
+    }
+
+    .logo:hover{
+        filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(5px -4px 18px rgb(7, 193, 250));;
+    
     }
 }

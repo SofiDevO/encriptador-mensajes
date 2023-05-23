@@ -56,7 +56,7 @@ export  function cambiarModo(){
         
         
         logo.style.filter = 'invert(100%) sepia(12%) saturate(166%) hue-rotate(219deg) brightness(115%) contrast(90%) drop-shadow(0 0 12px  rgba(0,212,255,1)';
-        
+
         mensajeResultado.style.color = 'white'
         mensajeResultado.style.transition = '2s';
 
@@ -103,8 +103,8 @@ export  function cambiarModo(){
         botonEncriptar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
         botonPegar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
         botonLimpiar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
-/*         btnReset.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
- */        botonDesencriptar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
+        /* btnReset.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'*/
+        botonDesencriptar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
     }
         
         
