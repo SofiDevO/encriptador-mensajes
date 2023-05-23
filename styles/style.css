@@ -177,8 +177,8 @@ button:hover{
 }
 
 #resultado:active{
-    font-size: 45px;
-    color: var(--intense-blue);
+    font-size: 20px;
+
 }
 
 .none{
