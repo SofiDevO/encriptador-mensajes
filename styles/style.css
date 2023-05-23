@@ -166,14 +166,14 @@ button:hover{
 }
 
 .leyenda{
-    font-size: 10px;
+    font-size: 11.7px;
 }
 .resultados{
     padding: 8px;
 }
 
 #resultado {
-    font-size: 13px;
+    font-size: 14px;
 }
 #resultado:hover{
     color: var(--seccond-blue);

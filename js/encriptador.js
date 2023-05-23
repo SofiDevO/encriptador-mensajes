@@ -229,6 +229,39 @@ function textoCopiado(){
 
 
 
+/* Evento para el boton reset */
+/* btnReset.addEventListener('click', ()=>{
+    let refresh = recargar()
+
+    function recargar(){
+        location.reload();
+    }
+})     */
+
+
+
+
+
+    
+ /* Evento para  el boton pegar */
+btnPegar.addEventListener('click', ()=>{
+    let paste = pegarTextorCopiado()
+    areaTexto.textContent =paste;
+    areaTexto.style.color = "blue"
+    btnLimpiar.style.display = 'block'
+    
+
+
+})
+
+    
+/* funcion para recuperar el texto copiado  */
+function pegarTextorCopiado(){
+    navigator.clipboard.readText()
+    .then(textoPegado => {
+    areaTexto.value = textoPegado;
+}
+)} 
 
 
 
@@ -271,38 +304,6 @@ function textoCopiado(){
 
 
 
-/* Evento para el boton reset */
-/* btnReset.addEventListener('click', ()=>{
-    let refresh = recargar()
-
-    function recargar(){
-        location.reload();
-    }
-})     */
-
-
-
-
-
-    
- /* Evento para  el boton pegar */
-btnPegar.addEventListener('click', ()=>{
-    let paste = pegarTextorCopiado()
-    areaTexto.textContent =paste;
-    areaTexto.style.color = "blue"
-    btnPegar.style.display = 'none';
-
-
-})
-
-    
-/* funcion para recuperar el texto copiado  */
-function pegarTextorCopiado(){
-    navigator.clipboard.readText()
-    .then(textoPegado => {
-    areaTexto.value = textoPegado;
-}
-)} 
 
 
 
