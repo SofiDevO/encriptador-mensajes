@@ -45,13 +45,14 @@ function recuperarTexto(){
 
 
 /* Evento al escribir en el área de texto, limita los caracteres y largo de las palabras mediante  expresiones regulares y el elemnto .replace */
+
 areaTexto.addEventListener('input', () => {
     let texto = recuperarTexto();
     texto = texto.replace(/[^a-z0-9,.ñ ¿?\n]/gi, '');
     areaTexto.value = texto;
-    if (texto.length > 24) {
+    if (texto.length > 23) {
     const palabras = texto.split(' ');
-    const palabrasCortas = palabras.filter(palabra => palabra.length <= 24);
+    const palabrasCortas = palabras.filter(palabra => palabra.length <= 23);
     areaTexto.value = palabrasCortas.join(' ');
     mensajeResultado.style.overflow = auto;
    /* alert("¡¡Buen intento!! 🤡  No puedes ingresar más de 23 carácteres seguidos, usa espacios"); */
