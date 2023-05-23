@@ -1,19 +1,22 @@
 
 const d = document;
-
+/* Elementos de la pagina */
 const toggle = d.getElementById ('toggleDark');
 const body = d.querySelector('body');
 const cajaResultado = d.getElementById('mensaje-resultado');
+const areaTexto = d.getElementById("encriptador")
 const logo = d.getElementById('logo');
+const footer = d.getElementById('footer')
 const logoFooter = d.getElementById('logo-footer');
 const mensajeResultado = d.getElementById('resultado')
+
+/* botones */
 const botonEncriptar= d.getElementById('encriptar')
 const botonPegar= d.getElementById('pegar')
 const botonLimpiar= d.getElementById( 'limpiar' )
-/* const botonCopiar= d.getElementById('copiar') */
-const btnReset= d.getElementById('reset')
 const botonDesencriptar= d.getElementById('desencriptar')
-const areaTexto = d.getElementById("encriptador")
+/* const btnReset= d.getElementById('reset')
+ *//* const botonCopiar= d.getElementById('copiar') */
 
 
 toggle.addEventListener('click', cambiarModo);
@@ -24,7 +27,7 @@ export  function cambiarModo(){
         body.style.background = 'white';
         body.style.color = 'black';
         body.style.transition = '2s';
-        
+        toggle.style.filter = 'invert(0%) sepia(83%) saturate(7433%) hue-rotate(290deg) brightness(80%) contrast(114%);'
         logo.style.filter = 'invert(16%) sepia(45%) saturate(2765%) hue-rotate(196deg) brightness(94%) contrast(97%)';
         logoFooter.style.filter = 'invert(100%) sepia(0%) saturate(0%) hue-rotate(6deg) brightness(101%) contrast(104%)';
         areaTexto.style.backgroundColor = 'white'
@@ -39,7 +42,7 @@ export  function cambiarModo(){
 
       
 
-
+        /* Estilos en el tema oscuro */
     }else{
         body.style.background = 'black';
         body.style.color = 'white';
@@ -57,7 +60,7 @@ export  function cambiarModo(){
         mensajeResultado.style.color = 'white'
         mensajeResultado.style.transition = '2s';
 
-        
+        footer.style.backgroundColor = '#080808'
         logoFooter.style.filter = 'invert(100%) sepia(12%) saturate(166%) hue-rotate(219deg) brightness(115%) contrast(90%) drop-shadow(0 0 12px  rgba(0,212,255,1)';
 
         mensajeResultado.style.color = 'white'
@@ -88,9 +91,9 @@ export  function cambiarModo(){
         botonCopiar.style.boxShadow = '0 0 10px  white';
         botonCopiar.style.transition = '2s'; */
         
-        btnReset.style.color = 'rgba(0,212,255,1)';
+       /*  btnReset.style.color = 'rgba(0,212,255,1)';
         btnReset.style.boxShadow = '0 0 10px  white';
-        btnReset.style.transition = '2s';
+        btnReset.style.transition = '2s'; */
 
         botonDesencriptar.style.color = 'rgba(0,212,255,1)';
         botonDesencriptar.style.boxShadow = '0 0 10px  white';
@@ -100,8 +103,8 @@ export  function cambiarModo(){
         botonEncriptar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
         botonPegar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
         botonLimpiar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
-        btnReset.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
-        botonDesencriptar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
+/*         btnReset.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
+ */        botonDesencriptar.style.background = 'linear-gradient(50deg, rgba(2,0,36,1) 0%, rgba(10,77,104,1) 50%, rgba(0,212,255,1) 100%)'
     }
         
         

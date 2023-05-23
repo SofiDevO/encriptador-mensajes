@@ -12,30 +12,52 @@ const btnEncriptar = d.getElementById('encriptar') ;
 const btnDesencriptar = d.getElementById('desencriptar');
 const btnPegar = d.getElementById('pegar');
 const btnLimpiar = d.getElementById('limpiar');
-const btnReset = d.getElementById('reset');
-const btnEnviar = d.getElementById('enviar')
+/* const btnReset = d.getElementById('reset');
+ */const btnEnviar = d.getElementById('enviar')
+
 
 /* Llaves Desencriptador */
-
-/* const llaves = [
-    ["e", "enter"]
-    ["i", "imes"]
-    ["a", "ai"]
-    ["o", "ober"]
-    ["u", "ufart"]
-]; */
-
-
-
+const llaves = [
+    ["e", "enter"],
+    ["i", "imes"],
+    ["a", "ai"],
+    ["o", "ober"],
+    ["u", "ufat"]
+];
 
 
 /* Ocultar elemntos y botones */
 btnLimpiar.style.display = 'none'
 ImagenForbriden.style.display = 'none'; 
 btnPegar.style.display = 'none';
-btnReset.style.display = 'none';
-/* btnEncriptar.style.display = 'none';
+/* btnReset.style.display = 'none';
+ *//* btnEncriptar.style.display = 'none';
 btnDesencriptar.style.display = 'none'; */
+
+
+/* Función para recuperar el texto del área de texto */
+function recuperarTexto(){
+    let area = d.querySelector(".area");
+    ImagenMuneco.style.display = 'none' 
+    return area.value.toLowerCase();
+    
+}
+
+
+/* Evento al escribir en el área de texto, limita los caracteres y largo de las palabras mediante  expresiones regulares y el elemnto .replace */
+areaTexto.addEventListener('input', () => {
+    let texto = recuperarTexto();
+    texto = texto.replace(/[^a-z0-9,.ñ ¿?\n]/gi, '');
+    areaTexto.value = texto;
+    if (texto.length > 24) {
+    const palabras = texto.split(' ');
+    const palabrasCortas = palabras.filter(palabra => palabra.length <= 24);
+    areaTexto.value = palabrasCortas.join(' ');
+    mensajeResultado.style.overflow = auto;
+   /* alert("¡¡Buen intento!! 🤡  No puedes ingresar más de 23 carácteres seguidos, usa espacios"); */
+    }
+});   
+
 
 
 
@@ -45,7 +67,6 @@ function encriptarMensaje(mensaje) {
 
     for (let i = 0; i < mensaje.length; i++) {
     let letra = mensaje[i];
-
         if (letra === "e") {
             mensajeEncriptado += "enter";
         } else if (letra === "i") {
@@ -60,34 +81,8 @@ function encriptarMensaje(mensaje) {
             mensajeEncriptado += letra;
         }
     }
-        return mensajeEncriptado;
-    }
-
-    const llaves = [
-        ["e", "enter"],
-        ["i", "imes"],
-        ["a", "ai"],
-        ["o", "ober"],
-        ["u", "ufat"]
-      ];
-
-function desencriptar(texto){
-
-
-    for (let i = 0; i < llaves.length; i++)
-    if (texto.includes(llaves[i][1])){
-        texto = texto.replaceAll(llaves[i][1],llaves[i][0]);
-    }
-    return texto; 
+    return mensajeEncriptado;
 }
-
-    
-
-
-
-
-/* Función para desencriptar un mensaje */
-
 
 
 /* Evento al hacer clic en el botón de encriptar */
@@ -105,81 +100,60 @@ export default  btnEncriptar.addEventListener('click', ()=>{
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
         }else{
+            mensajeResultado.textContent = encriptado;
             ImagenForbriden.style.display = 'none'; 
             ImagenMuneco.style.display = 'none'; 
-            btnReset.style.display = 'block';
+            /* btnReset.style.display = 'block'; */
             btnPegar.style.display = 'block';
-            btnLimpiar.style.display = 'block'
-            mensajeResultado.textContent = encriptado;
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
             leyenda.style.display = 'block'; 
             leyenda.textContent = textoCopiado();
-            btnReset.style.display = 'block';
-            limpiar();
-
-
+/*             btnReset.style.display = 'block';
+ */            limpiar();
 
         }
 });
 
 
 
+/* Función para desencriptar un mensaje */
+function desencriptar(texto){
+    for (let i = 0; i < llaves.length; i++)
+    if (texto.includes(llaves[i][1])){
+        texto = texto.replaceAll(llaves[i][1],llaves[i][0]);
+    }
+    return texto; 
+}
+
 /* Evento al hacer click en el botón desencriptar */
 btnDesencriptar.addEventListener('click', ()=>{
     let area = recuperarTexto()
     let desencriptado  = desencriptar(area);
 
-    mensajeResultado.textContent = desencriptado;
-
-
-    btnReset.style.display = 'block';
-    const loader = d.querySelector(".loader");
-    loader.classList.add("none");
+    if (area === ''){
+        mensajeResultado.textContent = ErrorAlert();
+        ImagenForbriden.style.display = 'block'; 
+        leyenda.style.display = 'none'; 
+        ImagenMuneco.style.display = 'none';
+        const loader = d.querySelector(".loader");
+        loader.classList.add("none");
+    }else{
+        mensajeResultado.textContent = desencriptado;
+/*         btnReset.style.display = 'block';
+ */        const loader = d.querySelector(".loader");
+        loader.classList.add("none");
+        leyenda.style.display = 'block'; 
+        leyenda.textContent = textoCopiado();
+/*         btnReset.style.display = 'block'; */
+        limpiar();
+    }
 });
-
-
-
-
-
-
-/* Función para recuperar el texto del área de texto */
-function recuperarTexto(){
-    let area = d.querySelector(".area");
-    ImagenMuneco.style.display = 'none' 
-    return area.value.toLowerCase();
-    
-}
-
-
-
-
-
-/* Función para mostrar un mensaje de error */
-function ErrorAlert(){
-    let textoError = d.querySelector(".resultado"); 
-    return ("Debes ingresar un texto");
-    const loader = d.querySelector(".loader");
-    loader.classList.add("none");
-}
-
-
-
-/* Función para mostrar un mensaje de capturando texto */
-function capturandoTexto(){
-    let capturando = d.querySelector(".resultado");
-    return ("Capturando Texto");
-}
-
-/* Función para mostrar un mensaje cuando se copia el texto */
-function textoHaSidoCopiado(){
-    let textoCopia = d.querySelector('.leyenda');
-    return ("El texto se copió al portapapeles")
-}
 
 /* Evento al hacer clic en el área de texto */
 areaTexto.addEventListener('click', ()=>{
     btnPegar.style.display = 'block';
+    btnLimpiar.style.display = 'block'
     ImagenMuneco.style.display = 'none' 
     ImagenForbriden.style.display = 'none' 
     leyenda.style.display = 'none'; 
@@ -187,7 +161,6 @@ areaTexto.addEventListener('click', ()=>{
     loader.classList.remove("none");
     mensajeResultado.textContent = capturandoTexto();
 })
-
 
 /* Evento copiar al al hacer click en el Resultado */
 mensajeResultado.addEventListener('click', ()=>{
@@ -199,45 +172,11 @@ mensajeResultado.addEventListener('click', ()=>{
         console.log("texto copiado " + textoCopiar)
         btnPegar.style.display = 'block';
         leyenda.textContent = textoHaSidoCopiado();
-        
     })
-
-       
-        
-
-        
-
-
+    limpiarResultado();
     }
 });
 
-
-
-function textoCopiado(){
-    let copiarLeyenda = d.querySelector('.leyenda');
-    return("Da click en el resultado para copiar ❏")
-}        
-
-
-/* Evento al escribir en el área de texto, limita los caracteres y largo de las palabras mediante  expresiones regulares y el elemnto .replace */
-
-areaTexto.addEventListener('input', () => {
-    let texto = recuperarTexto();
-    texto = texto.replace(/[^a-z0-9,.ñ \n]/gi, '');
-    areaTexto.value = texto;
-    if (texto.length > 23) {
-    const palabras = texto.split(' ');
-    const palabrasCortas = palabras.filter(palabra => palabra.length <= 23);
-    areaTexto.value = palabrasCortas.join(' ');
-   /* alert("¡¡Buen intento!! 🤡  No puedes ingresar más de 23 carácteres seguidos, usa espacios"); */
-    }
-});    
-
-
-/* Evento al hacer clic en el botón de limpiar */
-btnLimpiar.addEventListener('click', ()=>{
-    let borrar = limpiar();    
-})
 
 
 
@@ -246,20 +185,100 @@ function limpiar(){
     d.getElementById ('encriptador').value = "";
 }
 
-
-
 function limpiarResultado(){
     mensajeResultado.textContent = "";
 }
 
+/* Evento al hacer clic en el botón de limpiar */
+btnLimpiar.addEventListener('click', ()=>{
+    let borrar = limpiar();    
+})
+
+/* Función para mostrar un mensaje de error */
+function ErrorAlert(){
+    let textoError = d.querySelector(".resultado"); 
+    return ("Debes ingresar un texto");
+    const loader = d.querySelector(".loader");
+    loader.classList.add("none");
+}
+
+
+
+
+/* Función para mostrar un mensaje de capturando texto */
+function capturandoTexto(){
+    let capturando = d.querySelector(".resultado");
+    return ("Capturando Texto");
+}
+
+
+
+/* Función para mostrar un mensaje cuando se copia el texto */
+function textoHaSidoCopiado(){
+    let textoCopia = d.querySelector('.leyenda');
+    return ("El texto se copió al portapapeles")
+}
+
+/* Funcion para mostrar mensaje de que el texto se ha copiado */
+function textoCopiado(){
+    let copiarLeyenda = d.querySelector('.leyenda');
+    return("Da click en el resultado para copiar ❏")
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 /* Evento para el boton reset */
-btnReset.addEventListener('click', ()=>{
+/* btnReset.addEventListener('click', ()=>{
     let refresh = recargar()
 
     function recargar(){
         location.reload();
     }
-})    
+})     */
 
 
 

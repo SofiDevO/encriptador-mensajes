@@ -5,7 +5,7 @@
 }
     
 .logo{
-    padding: 15px;
+    padding: 1px;
     filter: invert(16%) sepia(45%) saturate(2765%) hue-rotate(196deg) brightness(94%) contrast(97%);
 
 
@@ -28,14 +28,13 @@ a{
 }
 
 i{
-   
     border-radius: 100%;
-    padding: 10px;
-    font-size: 30px;
+    font-size: 40px;
     cursor: pointer;
     position: absolute;
-    top: 1%;
     left: 78%;
+    top: -5px;
+
 }
 
     
@@ -53,10 +52,7 @@ i:hover{
 
 
 @media (min-width:768px){
-    .header{
-        padding:15px  0;
-    }
-
+    
     i{
         filter: drop-shadow(5px -4px 18px rgb(7, 193, 250));
         border: 3px solid var(--main-color);
@@ -65,11 +61,10 @@ i:hover{
         font-size: 45px;
         cursor: pointer;
         position: absolute;
-        top: 2%;
         left: 87%;
         background-color: transparent;
         border: none;
-        filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%)
+        
     }
 
     i:hover{
@@ -82,22 +77,18 @@ i:hover{
 /* Vista de  desktop */
 @media (min-width:1000px){
     .header{
-        padding:15px  0;
+        margin-top: 8px;
+        position: fixed;
+        width: 100%;
     }
 
     i{
-        filter: drop-shadow(5px -4px 18px rgb(7, 193, 250));
-        border: 3px solid var(--main-color);
         border-radius: 100%;
-        padding: 10px;
         font-size: 45px;
         cursor: pointer;
         position: absolute;
-        top: 2%;
-        left: 87%;
-        background-color: transparent;
-        border: none;
-        filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%)
+        top: -40%;
+        left: 86%;
     }
 
     i:hover{
