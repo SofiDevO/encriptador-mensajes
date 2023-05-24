@@ -10,11 +10,10 @@
 
 header, .container{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
-    /* gap: 10px; */
-    padding: 0 6px 0 20px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0 7px;
 }
 
     
