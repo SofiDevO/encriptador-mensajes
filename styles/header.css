@@ -1,16 +1,35 @@
 .header{
     display: flex;
-    justify-content: center;
+    padding: 13px 0;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+header, .container{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 237px;
 }
-    
+
+
+
 .logo{
-    padding: 1px;
+    margin-right: 10px;
+
     filter: invert(16%) sepia(45%) saturate(2765%) hue-rotate(196deg) brightness(94%) contrast(97%);
-
-
-    
 }
+
+.flags{
+    display: flex;
+    gap: 21px;
+    margin-left: 76px;
+}
+
+ .flags-item img{
+    width: 35px;
+ }   
 
 
 
@@ -29,11 +48,11 @@ a{
 
 i{
     border-radius: 100%;
-    font-size: 40px;
+    font-size: 45px;
     cursor: pointer;
     position: absolute;
-    left: 78%;
-    top: -5px;
+    left: 85%;
+    top: 0px;
 
 }
 
@@ -62,6 +81,7 @@ i:hover{
         cursor: pointer;
         position: absolute;
         left: 87%;
+        top: -10px;
         background-color: transparent;
         border: none;
         
@@ -76,20 +96,26 @@ i:hover{
 
 /* Vista de  desktop */
 @media (min-width:1000px){
-    .header{
-        margin-top: 8px;
-        position: fixed;
-        width: 100%;
+      .header{
+        display: flex;
+        width: 85%;
+        justify-content: space-between;
     }
-
+   
+    
+    header, .container{
+        display: flex;
+        width: 1221px;
+        justify-content: space-between;
+    }
+    
     i{
-        border-radius: 100%;
-        font-size: 45px;
         cursor: pointer;
         position: absolute;
-        top: -40%;
-        left: 86%;
-    }
+        top: 3px;
+        padding: 0;
+        left: 90%;
+            }
 
     i:hover{
         filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(2px -5px 8px rgb(7, 193, 250));
