@@ -57,6 +57,7 @@ video{
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 textarea{
@@ -160,16 +161,20 @@ button:hover{
     width: 294px;
     font-size: var(--font-size);
     text-align: center;
+    word-wrap: break-word;
     font-weight: 500;
     height: 284px;
     font-weight: bold;
 }
+
+
 
 .leyenda{
     font-size: 11.7px;
 }
 .resultados{
     padding: 8px;
+    
 }
 
 #resultado {
@@ -348,6 +353,7 @@ filter: invert(73%) sepia(98%) saturate(1%) hue-rotate(32deg) brightness(103%) c
         width: 269px;
         align-items: center;
         height: 356px;
+        word-wrap: break-word;
     }
 
     .leyenda{
@@ -463,10 +469,13 @@ filter: invert(73%) sepia(98%) saturate(1%) hue-rotate(32deg) brightness(103%) c
         width: 411px;
         height: 330px;
         align-items: center;
+            word-wrap: break-word;
+
     }
 
     .leyenda{
         font-size: 13px;
+
     }
 
     #resultado{

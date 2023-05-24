@@ -30,9 +30,8 @@ const llaves = [
 btnLimpiar.style.display = 'none'
 ImagenForbriden.style.display = 'none'; 
 btnPegar.style.display = 'none';
-/* btnReset.style.display = 'none';
- *//* btnEncriptar.style.display = 'none';
-btnDesencriptar.style.display = 'none'; */
+
+
 
 
 /* Función para recuperar el texto del área de texto */
@@ -54,7 +53,7 @@ areaTexto.addEventListener('input', () => {
     const palabras = texto.split(' ');
     const palabrasCortas = palabras.filter(palabra => palabra.length <= 23);
     areaTexto.value = palabrasCortas.join(' ');
-    mensajeResultado.style.overflow = auto;
+    
    /* alert("¡¡Buen intento!! 🤡  No puedes ingresar más de 23 carácteres seguidos, usa espacios"); */
     }
 });   
@@ -104,14 +103,12 @@ export default  btnEncriptar.addEventListener('click', ()=>{
             mensajeResultado.textContent = encriptado;
             ImagenForbriden.style.display = 'none'; 
             ImagenMuneco.style.display = 'none'; 
-            /* btnReset.style.display = 'block'; */
             btnPegar.style.display = 'block';
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
             leyenda.style.display = 'block'; 
             leyenda.textContent = textoCopiado();
-/*             btnReset.style.display = 'block';
- */            limpiar();
+            limpiar();
 
         }
 });
@@ -141,8 +138,8 @@ btnDesencriptar.addEventListener('click', ()=>{
         loader.classList.add("none");
     }else{
         mensajeResultado.textContent = desencriptado;
-/*         btnReset.style.display = 'block';
- */        const loader = d.querySelector(".loader");
+/*         btnReset.style.display = 'block';*/
+        const loader = d.querySelector(".loader");
         loader.classList.add("none");
         leyenda.style.display = 'block'; 
         leyenda.textContent = textoCopiado();
@@ -166,7 +163,6 @@ areaTexto.addEventListener('click', ()=>{
 /* Evento copiar al al hacer click en el Resultado */
 mensajeResultado.addEventListener('click', ()=>{
     let copy = copiarTexto()
-  
     function copiarTexto(){
         let textoCopiar = mensajeResultado.textContent;
         navigator.clipboard.writeText(textoCopiar).then(()=>{
@@ -177,6 +173,24 @@ mensajeResultado.addEventListener('click', ()=>{
     limpiarResultado();
     }
 });
+
+ /* Evento para  el boton pegar */
+btnPegar.addEventListener('click', ()=>{
+    let paste = pegarTextorCopiado();
+
+    /* funcion para recuperar el texto copiado  */
+    function pegarTextorCopiado(){
+        
+        navigator.clipboard.readText()
+        .then(textoPegado => {
+            recuperarTexto()
+            areaTexto.value = textoPegado;
+    
+        
+    }
+    )} 
+    
+})
 
 
 
@@ -193,7 +207,13 @@ function limpiarResultado(){
 /* Evento al hacer clic en el botón de limpiar */
 btnLimpiar.addEventListener('click', ()=>{
     let borrar = limpiar();    
+    let borrarResultado  = limpiarResultado()
 })
+
+
+
+
+/* SECCION DE MENSAJES LEYENDA */
 
 /* Función para mostrar un mensaje de error */
 function ErrorAlert(){
@@ -202,17 +222,11 @@ function ErrorAlert(){
     const loader = d.querySelector(".loader");
     loader.classList.add("none");
 }
-
-
-
-
 /* Función para mostrar un mensaje de capturando texto */
 function capturandoTexto(){
     let capturando = d.querySelector(".resultado");
     return ("Capturando Texto");
 }
-
-
 
 /* Función para mostrar un mensaje cuando se copia el texto */
 function textoHaSidoCopiado(){
@@ -220,114 +234,9 @@ function textoHaSidoCopiado(){
     return ("El texto se copió al portapapeles")
 }
 
-/* Funcion para mostrar mensaje de que el texto se ha copiado */
+/* Funcion para mostrar mensaje de copiar texto*/
 function textoCopiado(){
     let copiarLeyenda = d.querySelector('.leyenda');
     return("Da click en el resultado para copiar ❏")
 }  
-
-
-
-
-
-/* Evento para el boton reset */
-/* btnReset.addEventListener('click', ()=>{
-    let refresh = recargar()
-
-    function recargar(){
-        location.reload();
-    }
-})     */
-
-
-
-
-
-    
- /* Evento para  el boton pegar */
-btnPegar.addEventListener('click', ()=>{
-    let paste = pegarTextorCopiado()
-    areaTexto.textContent =paste;
-    areaTexto.style.color = "blue"
-    btnLimpiar.style.display = 'block'
-    
-
-
-})
-
-    
-/* funcion para recuperar el texto copiado  */
-function pegarTextorCopiado(){
-    navigator.clipboard.readText()
-    .then(textoPegado => {
-    areaTexto.value = textoPegado;
-}
-)} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
