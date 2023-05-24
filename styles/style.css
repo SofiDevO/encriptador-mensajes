@@ -283,7 +283,9 @@ filter: invert(73%) sepia(98%) saturate(1%) hue-rotate(32deg) brightness(103%) c
 
 
 .aluracursos{
-    width: 47px
+    width: 47px;
+    filter: invert(14%) sepia(84%) saturate(1925%) hue-rotate(199deg) brightness(92%) contrast(94%);
+    
 }
 
 .aluracursos:hover{
