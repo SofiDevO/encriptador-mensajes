@@ -2,24 +2,26 @@
     display: flex;
     padding: 9px 0;
     justify-content: space-between;
-    width: 336px;
+    width: 280px;
     flex-direction: row;
     align-items: center;
-    
 }
+    
 
 header, .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 237px;
+    width: 748px;
 }
 
 
 
-.logo{
-    margin-right: 10px;
 
+.logo{
+    margin-right: -35px;
+    padding: 0;
+    width: 110px;
     filter: invert(16%) sepia(45%) saturate(2765%) hue-rotate(196deg) brightness(94%) contrast(97%);
 }
 
@@ -52,9 +54,10 @@ i{
     border-radius: 100%;
     font-size: 45px;
     cursor: pointer;
-    position: absolute;
-    left: 85%;
-    top: 0px;
+    position: fixed;
+    left: 269px;
+    top: 446px;
+    filter: drop-shadow(0 0 12px #0073f5);
 
 }
 
@@ -78,12 +81,11 @@ i:hover{
         filter: drop-shadow(5px -4px 18px rgb(7, 193, 250));
         border: 3px solid var(--main-color);
         border-radius: 100%;
-        padding: 10px;
-        font-size: 45px;
+        font-size: 39px;
         cursor: pointer;
         position: absolute;
         left: 87%;
-        top: -10px;
+        top: -3px;
         background-color: transparent;
         border: none;
         
