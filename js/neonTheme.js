@@ -23,7 +23,7 @@ toggle.addEventListener('click', cambiarModo);
 
 export  function cambiarModo(){
     this.classList.toggle('bi-lightbulb-fill')
-    if(this.classList.toggle('bi-lightbulb')){
+    if(this.classList.toggle('bi-lightbulb-off-fill')){
         body.style.background = 'white';
         body.style.color = 'black';
         body.style.transition = '2s';
