@@ -16,7 +16,7 @@ The encryptor has a minimalist mode and a Neon mode, which features several effe
 
 I look forward to your feedback and suggestions.
 
-
+![ezgif com-optimize](https://github.com/SofiDevO/encriptador-mensajes/assets/102200061/6eddfb34-c5fc-4d29-9097-b6bbad709562)
 
 ![captura-pagina](https://github.com/SofiDevO/encriptador-mensajes/assets/102200061/c8beff17-9a57-41e5-93ba-8bf2267187b6)
 
@@ -25,3 +25,6 @@ I look forward to your feedback and suggestions.
 
 ![version-movil](https://github.com/SofiDevO/encriptador-mensajes/assets/102200061/1d24c7c2-530e-4b2c-a774-f8cee4aad735)
 
+
+![Captura de pantalla 2023-05-23 191713](https://github.com/SofiDevO/encriptador-mensajes/assets/102200061/ac7af6b0-049c-471a-8eaa-24d4fa114dc0)
+![Captura de pantalla 2023-05-23 191746](https://github.com/SofiDevO/encriptador-mensajes/assets/102200061/e7d5ed32-202c-4d48-a410-2ec333f01d05)
