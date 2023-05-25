@@ -99,6 +99,7 @@ export default  btnEncriptar.addEventListener('click', ()=>{
             ImagenMuneco.style.display = 'none';
             const loader = d.querySelector(".loader");
             loader.classList.add("none");
+            btnLimpiar.style.display = 'block'
         }else{
             mensajeResultado.textContent = encriptado;
             ImagenForbriden.style.display = 'none'; 
@@ -136,6 +137,8 @@ btnDesencriptar.addEventListener('click', ()=>{
         ImagenMuneco.style.display = 'none';
         const loader = d.querySelector(".loader");
         loader.classList.add("none");
+
+
     }else{
         mensajeResultado.textContent = desencriptado;
 /*         btnReset.style.display = 'block';*/
@@ -177,6 +180,11 @@ mensajeResultado.addEventListener('click', ()=>{
  /* Evento para  el boton pegar */
 btnPegar.addEventListener('click', ()=>{
     let paste = pegarTextorCopiado();
+    leyenda.style.display = 'block'; 
+    ImagenForbriden.style.display = 'none'; 
+    const loader = d.querySelector(".loader");
+    loader.classList.remove("none");
+    
 
     /* funcion para recuperar el texto copiado  */
     function pegarTextorCopiado(){
@@ -199,16 +207,23 @@ btnPegar.addEventListener('click', ()=>{
 function limpiar(){
     d.getElementById ('encriptador').value = "";
 }
-
 function limpiarResultado(){
     mensajeResultado.textContent = "";
 }
+
 
 /* Evento al hacer clic en el botón de limpiar */
 btnLimpiar.addEventListener('click', ()=>{
     let borrar = limpiar();    
     let borrarResultado  = limpiarResultado()
+    ImagenForbriden.style.display = 'none'; 
+    leyenda.style.display = 'block'; 
+    ImagenMuneco.style.display = 'block';
+    const loader = d.querySelector(".loader");
+    loader.classList.add("none");
 })
+        
+
 
 
 

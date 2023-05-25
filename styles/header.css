@@ -26,24 +26,28 @@ header, .container{
 
 .logo{
     margin-right: -35px;
-    padding: 0;
-    width: 110px;
-    
+    padding: 5px 0;
+    width: 94px;
     transform: scale(1.5);
 }
 
 .flags{
-    display: flex;
+    display: none;
     gap: 21px;
 }
 
  .flags-item img{
+    cursor: pointer;
+    display: block;
     width: 25px;
  }   
 
  .flags-item:hover{
     transform:scale(1.5)
  }
+
+
+
 
 
 
@@ -62,6 +66,7 @@ a{
 }
 
 i{
+
     font-size: 27px;
     cursor: pointer;
 
@@ -135,6 +140,12 @@ header, .container{
         padding: 0 17px;
     }
     
+    .logo{
+        margin-right: -35px;
+        padding: 16px 0;
+        width: 102px;
+        transform: scale(1.5);
+    }
     i{
        
         font-size: 39px;
