@@ -14,8 +14,8 @@ const btnEncriptar = d.getElementById('encriptar') ;
 const btnDesencriptar = d.getElementById('desencriptar');
 const btnPegar = d.getElementById('pegar');
 const btnLimpiar = d.getElementById('limpiar');
-const btnEs = d.getElementById('es');
-const btnEn = d.getElementById('em');
+/* const btnEs = d.getElementById('es');
+const btnEn = d.getElementById('em'); */
 
 
 
@@ -97,7 +97,7 @@ function limpiarResultado(){
 };
 
 
- /* Función para recuperar el texto copiado */
+ /* Función para pegar el texto copiado */
 function pegarTextoCopiado() {
     navigator.clipboard.readText().then(textoPegado => {
         recuperarTexto()
@@ -117,20 +117,12 @@ function copiarTexto(){
     btnPegar.style.display = 'block';
     btnEncriptar.style.display = 'block';
     btnDesencriptar.style.display = 'block';
-    leyenda.textContent = textoHaSidoCopiado();
+/*     leyenda.textContent = textoHaSidoCopiado(); */
 })
 limpiarResultado();
 };
 
-/* Función para mostrar un mensaje cuando se copia el texto */
-function textoHaSidoCopiado() {
-    let textoCopia = d.querySelector('.leyenda');
-    if (idioma === 'es') {
-    return "El texto se copió al portapapeles";
-    } else if (idioma === 'en') {
-    return "The text has been copied to the clipboard";
-    }
-    }
+
 
 
 
@@ -141,15 +133,15 @@ function textoHaSidoCopiado() {
 flagES.addEventListener('click', () => {
 cambiarIdioma('es');
 limpiarResultado()
-
-
 });
+
+
 
 flagEN.addEventListener('click', () => {
 cambiarIdioma('en');
 limpiarResultado()
-
 });
+
 
 function cambiarIdioma(idioma) {
   // Cambiar el texto de los elementos según el idioma
@@ -238,18 +230,19 @@ btnDesencriptar.addEventListener('click', ()=>{
     }
 });
 
+mensajeResultado.addEventListener('click', ()=>{
+    leyenda.textContent = textoHaSidoCopiado();
+});
 
-
-
-
-
-
-
-
-
-    
-
-
+/* Función para mostrar un mensaje cuando se copia el texto */
+function textoHaSidoCopiado() {
+    let textoCopia = d.querySelector('.leyenda');
+    if (idioma === 'es') {
+    return "El texto se copió al portapapeles";
+    } else if (idioma === 'en') {
+    return "The text has been copied to the clipboard";
+    }
+}
 
 /* Evento para  el boton pegar */
 btnPegar.addEventListener('click', () => {
@@ -260,8 +253,6 @@ btnPegar.addEventListener('click', () => {
     const loader = d.querySelector(".loader");
     loader.classList.remove("none");
 });
-  
-   
 
 /* Evento al hacer clic en el botón de RESET */
 btnLimpiar.addEventListener('click', ()=>{
@@ -273,8 +264,6 @@ btnLimpiar.addEventListener('click', ()=>{
     const loader = d.querySelector(".loader");
     loader.classList.add("none");
 });
-
-
 
 /* SECCION DE MENSAJES LEYENDA */
 /* Función para mostrar un mensaje de error */
@@ -288,39 +277,30 @@ btnLimpiar.addEventListener('click', ()=>{
         const loader = d.querySelector(".loader");
         loader.classList.add("none");
     };
-
-    
-    
-    
     /* Funcion para mostrar mensaje de copiar texto */
     function textoCopiado() {
-    let copiarLeyenda = d.querySelector('.leyenda');
-    if (idioma === 'es') {
-    return "Da click en el resultado para copiar ❏";
-    } else if (idioma === 'en') {
-    return "Click on the result to copy ❏";
+        let copiarLeyenda = d.querySelector('.leyenda');
+        if (idioma === 'es') {
+        return "Da click en el resultado para copiar ❏";
+        } else if (idioma === 'en') {
+        return "Click on the result to copy ❏";
         }
     }
 
   /* Función para mostrar un mensaje de capturando texto */
-  function capturandoTexto() {
-    let capturando = d.querySelector(".resultado");
-    if (idioma === 'es') {
-    return "Capturando Texto";
-    } else if (idioma === 'en') {
-    return "Capturing Text";
-    }
+    function capturandoTexto() {
+        let capturando = d.querySelector(".resultado");
+        if (idioma === 'es') {
+        return "Capturando Texto";
+        } else if (idioma === 'en') {
+        return "Capturing Text";
+        }
     };
-   
-
 }
 
 
 
 
-
-
-    
 /* Cambiar el idioma inicialmente a español */
 cambiarIdioma('es');
 
