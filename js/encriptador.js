@@ -14,6 +14,8 @@ const btnEncriptar = d.getElementById('encriptar') ;
 const btnDesencriptar = d.getElementById('desencriptar');
 const btnPegar = d.getElementById('pegar');
 const btnLimpiar = d.getElementById('limpiar');
+const btnEs = d.getElementById('es');
+const btnEn = d.getElementById('em');
 
 
 
@@ -34,66 +36,6 @@ btnPegar.style.display = 'none';
 btnEncriptar.style.display = 'none';
 btnDesencriptar.style.display = 'none';
 
-/* funcion para limpiar  el texto */
-export default  function limpiar(){
-    d.getElementById ('encriptador').value = "";
-}
-function limpiarResultado(){
-    mensajeResultado.textContent = "";
-}
-
-/* Integración del cambio de idioma. Muchas funciones se movieron dentro de la funcion, cambiar idioma para que los cambios se apliquen dentro del mismo scope  */
- const flagES = d.getElementById('es');
- const flagEN = d.getElementById('en');
-
-flagES.addEventListener('click', () => {
-cambiarIdioma('es');
-limpiarResultado()
-
-
-});
-
-flagEN.addEventListener('click', () => {
-cambiarIdioma('en');
-limpiarResultado()
-
-});
-
-function cambiarIdioma(idioma) {
-  // Cambiar el texto de los elementos según el idioma
-  if (idioma === 'es') {
-    btnEncriptar.textContent = 'Encriptar';
-    btnDesencriptar.textContent = 'Desencriptar';
-    btnPegar.textContent = 'Pegar';
-    btnLimpiar.textContent = 'Reset';
-    areaTexto.textContent = 'Ingresa el texto aquí';
-    leyenda.textContent = 'Ingresa el texto que deseas encriptar';
-    avisoMinusculas.textContent = 'Only lowercase without accents';
-    
-} else if (idioma === 'en') {
-    avisoMinusculas.textContent = 'Only lowercase without accents';
-    leyenda.textContent = 'Enter the text you want to encrypt';
-    btnEncriptar.textContent = 'Encrypt';
-    btnDesencriptar.textContent = 'Decrypt';
-    btnPegar.textContent = 'Paste';
-    btnLimpiar.textContent = 'Reset';
-    areaTexto.textContent = 'type your text here';
-}
-
-   /* Evento al hacer clic en el área de texto */
-    areaTexto.addEventListener('click', ()=>{
-    btnPegar.style.display = 'block';
-    btnLimpiar.style.display = 'block'
-    btnEncriptar.style.display = 'block';
-    btnDesencriptar.style.display = 'block';
-    ImagenMuneco.style.display = 'none' 
-    ImagenForbriden.style.display = 'none' 
-    leyenda.style.display = 'none'; 
-    const loader = d.querySelector(".loader");
-    loader.classList.remove("none");
-    mensajeResultado.textContent = capturandoTexto();
-    limpiar()
-});
 
 /* Función para recuperar el texto del área de texto */
 function recuperarTexto(){
@@ -101,6 +43,19 @@ function recuperarTexto(){
     ImagenMuneco.style.display = 'none' 
     return area.value.toLowerCase();
 }
+
+/* Evento al escribir en el área de texto, limita los caracteres y largo de las palabras mediante  expresiones regulares y el elemnto .replace */
+areaTexto.addEventListener('input', () => {
+    let texto = recuperarTexto();
+    texto = texto.replace(/[^a-z0-9,.ñ ¿?\n]/gi, '');
+    areaTexto.value = texto;
+    if (texto.length > 23) {
+    const palabras = texto.split(' ');
+    const palabrasCortas = palabras.filter(palabra => palabra.length <= 23);
+    areaTexto.value = palabrasCortas.join(' ');
+    }
+});  
+
 
 /* Función para encriptar un mensaje */
 function encriptarMensaje(mensaje) {
@@ -122,8 +77,7 @@ function encriptarMensaje(mensaje) {
         }
     }
     return mensajeEncriptado;
-}
-
+};
 
 /* Función para desencriptar un mensaje */
 function desencriptar(texto){
@@ -132,19 +86,108 @@ function desencriptar(texto){
         texto = texto.replaceAll(llaves[i][1],llaves[i][0]);
     }
     return texto; 
+};
+
+/* funcion para limpiar  el texto */
+export default  function limpiar(){
+    d.getElementById ('encriptador').value = "";
+};
+function limpiarResultado(){
+    mensajeResultado.textContent = "";
+};
+
+
+ /* Función para recuperar el texto copiado */
+function pegarTextoCopiado() {
+    navigator.clipboard.readText().then(textoPegado => {
+        recuperarTexto()
+        areaTexto.value = textoPegado;
+    });
 }
 
-/* Evento al escribir en el área de texto, limita los caracteres y largo de las palabras mediante  expresiones regulares y el elemnto .replace */
-areaTexto.addEventListener('input', () => {
-    let texto = recuperarTexto();
-    texto = texto.replace(/[^a-z0-9,.ñ ¿?\n]/gi, '');
-    areaTexto.value = texto;
-    if (texto.length > 23) {
-    const palabras = texto.split(' ');
-    const palabrasCortas = palabras.filter(palabra => palabra.length <= 23);
-    areaTexto.value = palabrasCortas.join(' ');
+/* Evento COPIAR al al hacer click en el Resultado */
+mensajeResultado.addEventListener('click', ()=>{
+    copiarTexto()
+});
+    
+function copiarTexto(){
+    let textoCopiar = mensajeResultado.textContent;
+    navigator.clipboard.writeText(textoCopiar).then(()=>{
+    console.log("Se copio: " + textoCopiar)
+    btnPegar.style.display = 'block';
+    btnEncriptar.style.display = 'block';
+    btnDesencriptar.style.display = 'block';
+    leyenda.textContent = textoHaSidoCopiado();
+})
+limpiarResultado();
+};
+
+/* Función para mostrar un mensaje cuando se copia el texto */
+function textoHaSidoCopiado() {
+    let textoCopia = d.querySelector('.leyenda');
+    if (idioma === 'es') {
+    return "El texto se copió al portapapeles";
+    } else if (idioma === 'en') {
+    return "The text has been copied to the clipboard";
     }
-});  
+    }
+
+
+
+/* Integración del cambio de idioma. Muchas funciones se movieron dentro de la funcion, cambiar idioma para que los cambios se apliquen dentro del mismo scope  */
+ const flagES = d.getElementById('es');
+ const flagEN = d.getElementById('en');
+
+flagES.addEventListener('click', () => {
+cambiarIdioma('es');
+limpiarResultado()
+
+
+});
+
+flagEN.addEventListener('click', () => {
+cambiarIdioma('en');
+limpiarResultado()
+
+});
+
+function cambiarIdioma(idioma) {
+  // Cambiar el texto de los elementos según el idioma
+    if (idioma === 'es') {
+        btnEncriptar.textContent = 'Encriptar';
+        btnDesencriptar.textContent = 'Desencriptar';
+        btnPegar.textContent = 'Pegar';
+        btnLimpiar.textContent = 'Reset';
+        areaTexto.textContent = 'Ingresa el texto aquí';
+        mensajeResultado.textContent = 'Empieza por escribir algo';
+        leyenda.textContent = 'Ingresa el texto que deseas encriptar';
+        avisoMinusculas.textContent = 'Only lowercase without accents';
+    } else if (idioma === 'en') {
+        mensajeResultado.textContent = 'Start by type something';
+        avisoMinusculas.textContent = 'Only lowercase without accents';
+        leyenda.textContent = 'Enter the text you want to encrypt';
+        btnEncriptar.textContent = 'Encrypt';
+        btnDesencriptar.textContent = 'Decrypt';
+        btnPegar.textContent = 'Paste';
+        btnLimpiar.textContent = 'Reset';
+        areaTexto.textContent = 'type your text here';
+    };
+    
+  /* Evento al hacer clic en el área de texto */
+    areaTexto.addEventListener('click', ()=>{
+        btnPegar.style.display = 'block';
+        btnLimpiar.style.display = 'block'
+        btnEncriptar.style.display = 'block';
+        btnDesencriptar.style.display = 'block';
+        ImagenMuneco.style.display = 'none' 
+        ImagenForbriden.style.display = 'none' 
+        leyenda.style.display = 'none'; 
+        const loader = d.querySelector(".loader");
+        loader.classList.remove("none");
+        mensajeResultado.textContent = capturandoTexto();
+        limpiar()
+});
+
 
 
 /* Evento al hacer clic en el botón de encriptar */
@@ -195,9 +238,22 @@ btnDesencriptar.addEventListener('click', ()=>{
     }
 });
 
+
+
+
+
+
+
+
+
+
+    
+
+
+
 /* Evento para  el boton pegar */
 btnPegar.addEventListener('click', () => {
-    limpiar();
+
     pegarTextoCopiado();
     leyenda.style.display = 'block';
     ImagenForbriden.style.display = 'none';
@@ -205,13 +261,7 @@ btnPegar.addEventListener('click', () => {
     loader.classList.remove("none");
 });
   
-    /* Función para recuperar el texto copiado */
-    function pegarTextoCopiado() {
-        navigator.clipboard.readText().then(textoPegado => {
-            recuperarTexto()
-            areaTexto.value = textoPegado;
-    });
-    }
+   
 
 /* Evento al hacer clic en el botón de RESET */
 btnLimpiar.addEventListener('click', ()=>{
@@ -224,19 +274,7 @@ btnLimpiar.addEventListener('click', ()=>{
     loader.classList.add("none");
 });
 
-/* Evento COPIAR al al hacer click en el Resultado */
-mensajeResultado.addEventListener('click', ()=>{
-    let copy = copiarTexto()
-    function copiarTexto(){
-        let textoCopiar = mensajeResultado.textContent;
-        navigator.clipboard.writeText(textoCopiar).then(()=>{
-        console.log("texto copiado " + textoCopiar)
-        btnPegar.style.display = 'block';
-        leyenda.textContent = textoHaSidoCopiado();
-    })
-    limpiarResultado();
-    }
-});
+
 
 /* SECCION DE MENSAJES LEYENDA */
 /* Función para mostrar un mensaje de error */
@@ -252,15 +290,7 @@ mensajeResultado.addEventListener('click', ()=>{
     };
 
     
-    /* Función para mostrar un mensaje cuando se copia el texto */
-    function textoHaSidoCopiado() {
-    let textoCopia = d.querySelector('.leyenda');
-    if (idioma === 'es') {
-    return "El texto se copió al portapapeles";
-    } else if (idioma === 'en') {
-    return "The text has been copied to the clipboard";
-    }
-    }
+    
     
     /* Funcion para mostrar mensaje de copiar texto */
     function textoCopiado() {
@@ -280,7 +310,8 @@ mensajeResultado.addEventListener('click', ()=>{
     } else if (idioma === 'en') {
     return "Capturing Text";
     }
-    }
+    };
+   
 
 }
 
