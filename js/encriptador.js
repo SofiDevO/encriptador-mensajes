@@ -155,8 +155,8 @@ function cambiarIdioma(idioma) {
         leyenda.textContent = 'Ingresa el texto que deseas encriptar';
         avisoMinusculas.textContent = 'Solo minúsculas sin acentos';
     } else if (idioma === 'en') {
-        mensajeResultado.textContent = 'Start by type something';
         avisoMinusculas.textContent = 'Only lowercase without accents';
+        mensajeResultado.textContent = 'Start by type something';
         leyenda.textContent = 'Enter the text you want to encrypt';
         btnEncriptar.textContent = 'Encrypt';
         btnDesencriptar.textContent = 'Decrypt';
