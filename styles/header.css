@@ -32,7 +32,7 @@ header, .container{
 }
 
 .flags{
-    display: none;
+    display: flex;
     gap: 21px;
 }
 

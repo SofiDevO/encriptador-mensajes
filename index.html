@@ -49,12 +49,12 @@
                 <img src="./img/Logo.svg" alt="Alura logo" class="logo" id="logo">
                 </a>
             
-            <div id="flags" class="flags">
-                <div class="flags-item" data-language="es" >
+            <div id="flags" class="flags" >
+                <div class="flags-item" data-language="es" id="es" >
                     <img src="./img/flag-for-mexico.svg"  alt="">
                 </div>
 
-                <div class="flags-item" data-language="en" >
+                <div class="flags-item" data-language="en" id="en">
                     <img src="./img/flag-us-outlying-islands.svg"  alt="">
                 </div>
             </div>
@@ -72,18 +72,18 @@
             <div class="encriptador">
                 <!-- <h2>Ingrese el texto aqui</h2> -->
                 <div class="area-texto">                    
-                    <textarea name="palabras"  class="area"  id="encriptador" cols="30" rows="10" placeholder="Ingrese el texto aqui" ></textarea>
+                    <textarea name="palabras"  class="area"  id="encriptador" cols="30" rows="10" placeholder="" >Ingresa el texto aquí</textarea>
                     <div class="legend">
                         <img src="./img/bi_exclamation-circle-fill.svg" alt="">
-                        <p >Solo minúsculas sin acentos</p>
+                        <p  id="advice">Solo minúsculas sin acentos</p>
                     </div>
                 </div>
                 <div class="btns">
-                    <!-- <button class="btn" id="enviar">enviar</button> -->
+
                     <button class="btn" id="encriptar">Encriptar</button>
                     <button class="btn" id="desencriptar">Desencriptar</button>
                     <button class="btn" id="pegar">Pegar</button>
-                    <button class="btn" id="limpiar">Limpiar </button>
+                    <button class="btn" id="limpiar">Resest </button>
                     
                 </div>
             </div>
@@ -101,7 +101,7 @@
                         <img src="./img/rings.svg" alt="loader">
                     </div>
                     <p id="resultado"  class="resultado">Empieza por escribir algo</p>
-                    <p   class="leyenda" id="leyenda">Ingresa el texto que deseas encriptar</p>
+                    <p class="leyenda" id="leyenda">Ingresa el texto que deseas encriptar</p>
                 </div>
                 <!-- botones -->
             
