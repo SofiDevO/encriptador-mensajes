@@ -5,6 +5,9 @@
     width: 280px;
     flex-direction: row;
     align-items: center;
+    position: fixed;
+    background-color: white;
+    z-index: 2;
 }
     
 
@@ -25,7 +28,8 @@ header, .container{
     margin-right: -35px;
     padding: 0;
     width: 110px;
-    filter: invert(16%) sepia(45%) saturate(2765%) hue-rotate(196deg) brightness(94%) contrast(97%);
+    
+    transform: scale(1.5);
 }
 
 .flags{
@@ -37,11 +41,16 @@ header, .container{
     width: 25px;
  }   
 
+ .flags-item:hover{
+    transform:scale(1.5)
+ }
+
 
 
 
 .logo:hover{
     filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(5px -4px 18px rgb(7, 193, 250));;
+    transform: scale(1.8);
 
 }
 
@@ -66,6 +75,7 @@ i{
 
 i:hover{
     filter: invert(60%) sepia(78%) saturate(933%) hue-rotate(154deg) brightness(83%) contrast(94%);
+    transform: scale(1.5);
 }
 
 
@@ -87,6 +97,7 @@ i:hover{
 
     i:hover{
         filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(2px -5px 8px rgb(7, 193, 250));
+        
         
     }
 }
@@ -130,15 +141,6 @@ header, .container{
         cursor: pointer;
        }
 
-    i:hover{
-        filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(2px -5px 8px rgb(7, 193, 250));
-        
-    }
-
-    .logo:hover{
-        width: 88px;
-        filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(5px -4px 18px rgb(7, 193, 250));;
-    }
 }
 
     
