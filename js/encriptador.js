@@ -153,7 +153,7 @@ function cambiarIdioma(idioma) {
         areaTexto.textContent = 'Ingresa el texto aquí';
         mensajeResultado.textContent = 'Empieza por escribir algo';
         leyenda.textContent = 'Ingresa el texto que deseas encriptar';
-        avisoMinusculas.textContent = 'Only lowercase without accents';
+        avisoMinusculas.textContent = 'Solo minúsculas sin acentos';
     } else if (idioma === 'en') {
         mensajeResultado.textContent = 'Start by type something';
         avisoMinusculas.textContent = 'Only lowercase without accents';
