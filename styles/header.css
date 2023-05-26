@@ -1,22 +1,22 @@
 .header{
     display: flex;
-    padding: 9px 0;
+    padding: 2px 0;
     justify-content: space-between;
-    width: 280px;
+    width: 100%;
     flex-direction: row;
-    align-items: center;
     position: fixed;
     background-color: white;
     z-index: 2;
 }
     
 
-header, .container{
+header .container{
     display: flex;
     width: 100%;
+    gap: 60px;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 0 7px;
+    align-items: center;
 }
 
     
@@ -25,11 +25,10 @@ header, .container{
 
 
 .logo{
-    margin-right: -35px;
-    padding: 5px 0;
-    width: 94px;
-    transform: scale(1.5);
+    width: 18px;
 }
+    
+    
 
 .flags{
     display: flex;
@@ -87,7 +86,7 @@ i:hover{
 
 
 
-@media (min-width:768px){
+@media (min-width:527px){
     .flags-item img{
         width: 35px;
      }   
@@ -98,29 +97,34 @@ i:hover{
     }
 
     
-        
+    .logo{
+    margin-right: -35px;
+    width: 57px;
+    }    
+
+  
 
     i:hover{
         filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(2px -5px 8px rgb(7, 193, 250));
+    }
+
         
         
+    .header{
+        display: flex;
+        padding: 9px 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    header, .container{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 17px;
     }
 }
-.header{
-    display: flex;
-    padding: 9px 0;
-    width: 100%;
-    align-items: center;
-}
-
-header, .container{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 17px;
-}
-
 
 /* Vista de  desktop */
 @media (min-width:1000px){
@@ -143,7 +147,7 @@ header, .container{
     .logo{
         margin-right: -35px;
         padding: 16px 0;
-        width: 102px;
+        width: 53px;
         transform: scale(1.5);
     }
     i{
