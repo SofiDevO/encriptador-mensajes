@@ -117,14 +117,16 @@ i:hover{
         align-items: center;
     }
 
-    header, .container{
+  /*   header, .container{
         display: flex;
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
         padding: 0 17px;
     }
+ */
 }
+
 
 /* Vista de  desktop */
 @media (min-width:1000px){
@@ -136,13 +138,15 @@ i:hover{
     }
    
     
-    header, .container{
+    header .container{
         display: flex;
         width: 100%;
+        gap: 336px;
         flex-direction: row;
-        justify-content: space-between;
-        padding: 0 17px;
+        justify-content: space-evenly;
+        align-items: center;
     }
+
     
     .logo{
         margin-right: -35px;
