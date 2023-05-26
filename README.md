@@ -7,7 +7,7 @@ El encriptador tiene un modo minimalista y un modo Neon, el cual cuantea con var
 
 Espero su feed back y sugerencias
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S5IFKIG)
+
 
 
 ## ENG 🇺🇸 :
@@ -17,6 +17,8 @@ This is my first project for the Alura Latam and One Oracle programming logic ch
 The encryptor has a minimalist mode and a Neon mode, which features several effects generated with JS and CSS3. 😎
 
 I look forward to your feedback and suggestions.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S5IFKIG)
 
 ![ezgif com-optimize](https://github.com/SofiDevO/encriptador-mensajes/assets/102200061/6eddfb34-c5fc-4d29-9097-b6bbad709562)
 
