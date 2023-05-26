@@ -7,6 +7,8 @@ El encriptador tiene un modo minimalista y un modo Neon, el cual cuantea con var
 
 Espero su feed back y sugerencias
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S5IFKIG)
+
 
 ## ENG 🇺🇸 :
 
