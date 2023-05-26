@@ -485,10 +485,7 @@ filter: invert(73%) sepia(98%) saturate(1%) hue-rotate(32deg) brightness(103%) c
         
       
     
-    footer{
-    display: flex;
-    width: 100%;
-    }
+  
 
     #footer{
         width: 100%;
