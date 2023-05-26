@@ -91,12 +91,10 @@ textarea::placeholder{
 }
 
 .btns{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 12px 0;
-    align-items: center;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
 }
 
 
