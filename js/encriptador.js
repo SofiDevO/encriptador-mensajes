@@ -39,7 +39,7 @@ btnDesencriptar.style.display = 'none';
 
 /* Función para recuperar el texto del área de texto */
 function recuperarTexto(){
-    let area = d.querySelector(".area");
+    let area = document.getElementById("encriptador");
     ImagenMuneco.style.display = 'none' 
     return area.value.toLowerCase();
 }
