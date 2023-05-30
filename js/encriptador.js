@@ -42,6 +42,7 @@ btnEncriptar.style.display = 'none';
 btnDesencriptar.style.display = 'none';
 
 
+
 /* Función para recuperar el texto del área de texto */
 function recuperarTexto(){
     let area = document.getElementById("encriptador");
@@ -96,6 +97,7 @@ function desencriptar(texto){
 /* funcion para limpiar  el texto */
 export default  function limpiar(){
     d.getElementById ('encriptador').value = "";
+    
 };
 function limpiarResultado(){
     mensajeResultado.textContent = "";
@@ -131,13 +133,17 @@ limpiarResultado();
 
 
 
+
 /* Integración del cambio de idioma. Muchas funciones se movieron dentro de la funcion, cambiar idioma para que los cambios se apliquen dentro del mismo scope  */
  const flagES = d.getElementById('es');
  const flagEN = d.getElementById('en');
+ flagES.style.display = 'none';
 
 flagES.addEventListener('click', () => {
 cambiarIdioma('es');
 limpiarResultado()
+flagEN.style.display = 'block';
+flagES.style.display = 'none';
 });
 
 
@@ -145,6 +151,9 @@ limpiarResultado()
 flagEN.addEventListener('click', () => {
 cambiarIdioma('en');
 limpiarResultado()
+flagEN.style.display = 'none';
+flagES.style.display = 'block';
+
 });
 
 
@@ -276,6 +285,7 @@ btnLimpiar.addEventListener('click', ()=>{
     ImagenMuneco.style.display = 'block';
     const loader = d.querySelector(".loader");
     loader.classList.add("none");
+    
 });
 
 /* SECCION DE MENSAJES LEYENDA */

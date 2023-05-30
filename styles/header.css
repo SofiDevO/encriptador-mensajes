@@ -38,11 +38,13 @@ header .container{
  .flags-item img{
     cursor: pointer;
     display: block;
-    width: 25px;
+    width: 40px;
  }   
 
  .flags-item:hover{
-    transform:scale(1.5)
+    transform:scale(1.5);
+    filter: drop-shadow(5px -4px 18px rgb(7, 193, 250));
+
  }
 
 
@@ -52,7 +54,7 @@ header .container{
 
 
 .logo:hover{
-    filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(5px -4px 18px rgb(7, 193, 250));;
+    filter: invert(47%) sepia(98%) saturate(459%) hue-rotate(147deg) brightness(96%) contrast(84%) drop-shadow(5px -4px 18px rgb(7, 193, 250));
     transform: scale(1.8);
 
 }

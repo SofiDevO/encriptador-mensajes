@@ -9,8 +9,9 @@ const areaTexto = d.getElementById("encriptador")
 const logo = d.getElementById('logo');
 const footer = d.getElementById('footer')
 const logoFooter = d.getElementById('logo-footer');
-const mensajeResultado = d.getElementById('resultado')
-
+const mensajeResultado = d.getElementById('resultado');
+const mensajeLeyenda = d.getElementById('leyenda');
+const banderas = d.getElementById('flags')
 /* botones */
 const botonEncriptar= d.getElementById('encriptar')
 const botonPegar= d.getElementById('pegar')
@@ -31,6 +32,7 @@ export  function cambiarModo(){
         body.style.background = 'white';
         body.style.color = 'black';
         body.style.transition = '2s';
+        mensajeLeyenda.style.transition = '1s'
       
         header.style.backgroundColor = 'white';
         header.style.transition = '2s';
@@ -38,6 +40,9 @@ export  function cambiarModo(){
         toggle.style.filter = 'invert(0%) sepia(83%) saturate(7433%) hue-rotate(290deg) brightness(80%) contrast(114%);'
        
         logo.style.filter = ' invert(0%) sepia(99%) saturate(3%) hue-rotate(150deg) brightness(102%) contrast(100%)';
+
+        
+       
         
         logoFooter.style.filter = 'invert(100%) sepia(0%) saturate(0%) hue-rotate(6deg) brightness(101%) contrast(104%) drop-shadow(0 0 12px  rgba(0,212,255,1)';
        
@@ -53,7 +58,7 @@ export  function cambiarModo(){
         
         mensajeResultado.style.color = 'black'
 
-
+        banderas.style.filter = ' drop-shadow(0 0 12px  rgba(0,212,255,1)';
         cajaResultado.style.boxShadow = '0 0 0px ';
         cajaResultado.style.border = 'solid 4px #012650';
 
@@ -66,6 +71,7 @@ export  function cambiarModo(){
         header.style.transition = '2s';
         body.style.color = 'white';
         body.style.transition = '2s';
+        mensajeLeyenda.style.transition = '1s'
        
         botonGithub.style.filter = 'invert(100%) sepia(100%) saturate(0%) hue-rotate(289deg) brightness(103%) contrast(101%)drop-shadow(0 0 12px  rgba(255, 255, 255)';
         botonAlura.style.filter = 'invert(16%) sepia(45%) saturate(2765%) hue-rotate(196deg) brightness(94%) contrast(97%) drop-shadow(0 0 12px  rgba(0,212,255,1)';
@@ -82,15 +88,16 @@ export  function cambiarModo(){
         
         logo.style.filter = 'invert(100%) sepia(0%) saturate(0%) hue-rotate(6deg) brightness(101%) contrast(104%) drop-shadow(0 0 12px  rgba(0,212,255,1)';
         
+        banderas.style.filter = 'invert(100%) sepia(0%) saturate(0%) hue-rotate(6deg) brightness(101%) contrast(104%) drop-shadow(0 0 12px  rgba(0,212,255,1)';
 
         mensajeResultado.style.color = 'white'
-        mensajeResultado.style.transition = '2s';
+        mensajeResultado.style.transition = '1s';
 
         footer.style.backgroundColor = '#080808'
         logoFooter.style.filter = 'invert(100%) sepia(12%) saturate(166%) hue-rotate(219deg) brightness(115%) contrast(90%) drop-shadow(0 0 12px  rgba(0,212,255,1)';
 
         mensajeResultado.style.color = 'white'
-        mensajeResultado.style.transition = '2s';
+        mensajeResultado.style.transition = '1s';
         
         cajaResultado.style.border = 'solid 4px rgba(0,212,255,1)';
         cajaResultado.style.boxShadow = '0 0 20px rgba(0,212,255,1)';
