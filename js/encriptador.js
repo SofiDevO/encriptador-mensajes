@@ -7,6 +7,11 @@ const ImagenMuneco = d.getElementById('muneco');
 const ImagenForbriden = d.getElementById('forbriden');
 const leyenda = d.getElementById('leyenda');
 const avisoMinusculas = d.getElementById('advice');
+const spanGithub = d.getElementById("github-span")
+const spanAlura = d.getElementById("alura-span")
+const spanLinkedin = d.getElementById("linkedin-span")
+const spanPlatzi = d.getElementById("platzi-span")
+
 
 
 /* Botones */
@@ -154,7 +159,15 @@ function cambiarIdioma(idioma) {
         mensajeResultado.textContent = 'Empieza por escribir algo';
         leyenda.textContent = 'Ingresa el texto que deseas encriptar';
         avisoMinusculas.textContent = 'Solo minúsculas sin acentos';
+        spanGithub.textContent = 'Ver repositorio';
+        spanAlura.textContent = 'Mi perfil de Alura';
+        spanLinkedin.textContent = 'Mi LinkedIn';
+        spanPlatzi.textContent = 'Mi perfil de Platzi';
     } else if (idioma === 'en') {
+        spanGithub.textContent = 'view repository';
+        spanAlura.textContent = 'My alura profile'
+        spanLinkedin.textContent = 'My Linkedin'
+        spanPlatzi.textContent = 'My Platzi profile'
         avisoMinusculas.textContent = 'Only lowercase without accents';
         mensajeResultado.textContent = 'Start by type something';
         leyenda.textContent = 'Enter the text you want to encrypt';

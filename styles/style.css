@@ -49,7 +49,9 @@ video{
     gap: 10px;
     padding: 40px 0;
     height: 929px;
+   
 }
+    
 
 
 
@@ -244,7 +246,38 @@ button:hover{
     gap: 27px;
     justify-content: center;
     padding: 6px;
+    
 }
+
+
+
+.tooltip-box{
+    position: relative;
+
+}
+
+
+.tooltip-info{
+    background-color: var(--main-color);
+    color: var(--second-color);
+    border: 1px solid var(--second-color);
+    padding: 3px 6px;
+    border-radius: 5px;
+    position: fixed;
+    visibility: hidden;
+    font-size: 13px;
+    z-index: 10;
+}
+
+
+
+
+
+.tooltip-box:hover .tooltip-info{
+    visibility: visible;
+}
+
+
 
 .github{
 width: 25px;
@@ -281,7 +314,6 @@ filter: invert(73%) sepia(98%) saturate(1%) hue-rotate(32deg) brightness(103%) c
 .platzi:hover{
     transform: scale(1.5);
 }
-
 
 
 
@@ -522,6 +554,24 @@ filter: invert(73%) sepia(98%) saturate(1%) hue-rotate(32deg) brightness(103%) c
         color: var(--second-color);
         margin: 6px 0;
         cursor: pointer;
+    }
+
+    #github-span{
+        top: 88%;
+        left: 84%;
+    }
+    #alura-span{
+        top: 88%;
+        left: 89%;
+    }
+    #linkedin-span{
+        top: 88%;
+        left: 91%;
+    }
+    
+    #platzi-span{
+        top: 88%;
+        left: 91%;
     }
 
 }
